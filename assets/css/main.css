@@ -26,6 +26,49 @@
     border: 0;
 }
 
+.back-video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .back-video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .back-video {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.content {
+    text-align: center;
+	z-index: 0;
+}
+.content h1 {
+    font-size: 120px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.5s;
+	z-index: 0;
+}
+
+.content a {
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    font-size: 24px;
+    border: 2px solid #fff;
+    padding: 14px 70px;
+    border-radius: 50px;
+    margin-top: 20px;
+}
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -118,7 +161,7 @@ input, select, textarea {
 	}
 
 	body, input, textarea, select {
-		font-family: 'Source Sans Pro', sans-serif;
+		font-family: "Poppins", sans-serif;
 		font-weight: 400;
 		color: #919499;
 		font-size: 14pt;
@@ -1987,7 +2030,7 @@ input, select, textarea {
 			display: block;
 			font-weight: 700;
 			letter-spacing: 0.25em;
-			font-size: 0.9em;
+			font-size: 1.2em;
 			width: 25em;
 			height: 3.25em;
 			top: -3.25em;
@@ -2080,10 +2123,10 @@ input, select, textarea {
 		-ms-justify-content: center;
 		justify-content: center;
 		position: relative;
+		background: #0000005d;
 		height: 24em;
-		background: /*#4d8262;*/ url("../../images/cool neato background.mp4") autoplay loop center center;
-		background-size: cover;
 		padding: 0;
+		z-index: -1;
 	}
 
 		#header:before {
@@ -2097,16 +2140,13 @@ input, select, textarea {
 		}
 
 		.homepage #header {
-			height: 42em;
+			height: 55em;
 		}
 
 /* Logo */
 
 	#logo {
-		width: 100%;
 		text-align: center;
-		position: relative;
-		top: 1.5em;
 	}
 
 		#logo h1 {
@@ -2124,7 +2164,7 @@ input, select, textarea {
 			margin: 1.25em 0 0 0;
 			display: block;
 			letter-spacing: 0.2em;
-			font-size: 0.9em;
+			font-size: 2em;
 		}
 
 /* Nav */
@@ -2874,7 +2914,7 @@ input, select, textarea {
 			}
 
 				.wrapper .title {
-					font-size: 0.9em;
+					font-size: 10em;
 					width: 18em;
 					height: 2.5em;
 					top: -2.5em;
