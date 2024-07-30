@@ -10,28 +10,53 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			/* Header */
+			#header {
+				display: flex;
+				align-items: center;
+				position: relative;
+				height: 24em;
+				background: #4d8262;
+				padding: 0;
+				overflow: hidden;
+			}
+
+			#header {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				min_width: 100%;
+				min_height: 100%;
+				width: auto;
+				height: auto;
+				z-index: -1;
+				transform: translate(-50%, -50%);
+			}
+
+			#Logo {
+				position: relative;
+				z-index: 1;
+			}
+		</style>
 	</head>
-	<body class="homepage is-preload">
+	<body class="homepage is preload">
 		<div id="page-wrapper">
 
 			<!-- Header -->
-				<section id="header" class="wrapper">
+			<section id="header" class="wrapper">
+				<video autoplay muted loop>
+					<source src="images/cool_neato_background.mp4" type="video/mp4">
+						Your browser does not support the video tag
+					</video>
 
 					<!-- Logo -->
-						<div id="logo">
-							<h1><a>Jacob Berger</a></h1>
-						</div>
-
-					<!-- Nav
-						<nav id="nav">
-							<ul>
-								<li class="current"><a href="index.html">Home</a></li>
-								<li><a href="codes.html">Coding</a></li>
-								<li><a href="3dmodels.html">3D Models</a></li>
-							</ul>
-						</nav>-->
-
-				</section>
+				<div id="logo">
+					<h1><a>Jacob Berger</a></h1>
+				</div>
+			</section>
+		</div>
+	</body>
 
 			<!-- Main -->
 				<section id="main" class="wrapper style1">
