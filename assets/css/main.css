@@ -2081,7 +2081,7 @@ input, select, textarea {
 		justify-content: center;
 		position: relative;
 		height: 24em;
-		background: /*#4d8262;*/ url("../../images/cool neato background.mp4") no-repeat center center fixed; background-size: cover;;
+		background: /*#4d8262;*/ url("../../images/cool neato background.mp4") autoplay loop center center;
 		background-size: cover;
 		padding: 0;
 	}
