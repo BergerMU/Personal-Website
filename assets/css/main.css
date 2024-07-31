@@ -2080,6 +2080,7 @@ input, select, textarea {
 		background: #0000006d;
 		background-size: cover;
 		padding: 0;
+		overflow: hidden;
 	}
 
 	#headerVideo {
@@ -2088,8 +2089,8 @@ input, select, textarea {
 		left: 0;
 		width: 100%;
 		height: 100%;
-		object-fit: cover; /* Ensure the video covers the entire area */
-		z-index: -1; /* Ensure the video is behind any content in the header */
+		object-fit: cover;
+		z-index: -1;
 	}
 
 		#header:before {
@@ -2100,6 +2101,28 @@ input, select, textarea {
 			width: 100%;
 			height: 100%;
 			background: "images/overlay.png";
+			object-fit: cover;
+		}
+
+		@media (max-width: 768px) {
+			#headerVideo {
+				display: none;
+			}
+
+			#headerImage {
+				display: block
+			}
+		}
+
+		#headerImage {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: -1;
 		}
 
 		.homepage #header {
