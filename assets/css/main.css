@@ -2019,7 +2019,7 @@ input, select, textarea {
 
 		.wrapper.style1 {
 			background: #1e1e1e url("images/overlay.png");
-			color: #eee;
+			color: #982c2c;
 			color: rgba(255, 255, 255, 0.75);
 		}
 
@@ -2077,14 +2077,14 @@ input, select, textarea {
 		justify-content: center;
 		position: relative;
 		height: 24em;
-		background: #0000006d;
+		background: #0000006b;
 		background-size: cover;
 		padding: 0;
 		overflow: hidden;
 	}
 
 	#headerVideo {
-		position: fixed;
+		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -2102,27 +2102,7 @@ input, select, textarea {
 			height: 100%;
 			background: "images/overlay.png";
 			object-fit: cover;
-		}
-
-		@media (max-width: 768px) {
-			#headerVideo {
-				display: none;
-			}
-
-			#headerImage {
-				display: block
-			}
-		}
-
-		#headerImage {
-			display: none;
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			z-index: -1;
+			z-index: 0;
 		}
 
 		.homepage #header {
@@ -2146,7 +2126,7 @@ input, select, textarea {
 			color: #fff;
 			font-size: 4em;
 			letter-spacing: 0.25em;
-			transition: 0.5s;
+			transition: 0.25s;
 			-webkit-text-stroke: 1px #fff;
 			margin: 0;
 			padding: 0;
