@@ -7,7 +7,24 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-/* video display */
+html, body, div, span, applet, object,
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;}
+
 
 /* Sketchfab 3D models */
 
@@ -26,31 +43,44 @@
     border: 0;
 }
 
+/* video display */
+
 .back-video {
     position: fixed;
     right: 0;
     bottom: 0;
     z-index: -1;
+	object-fit: cover;
 }
 
-@media (min-aspect-ratio: 16/9) {
-    .back-video {
-        width: 100%;
-        height: auto;
-    }
+@media (max-width: 768px) {
+	.content h1 {
+		font-size: 60px;
+	}
+	.content a {
+		font-size: 18px;
+		padding: 10px 50px;
+	}
 }
 
-@media (max-aspect-ratio: 16/9) {
-    .back-video {
-        width: auto;
-        height: 100%;
-    }
+@media (max-width: 480px) {
+	.content h1 {
+		font-size: 40;
+	}
+	.content a {
+		font-size: 16px;
+		padding: 8px 40px;
+	}
 }
 
 .content {
+	position: relative;
     text-align: center;
 	z-index: 0;
+	padding: 20px;
+	transition: background-color 0.3s, color 0.3s;
 }
+
 .content h1 {
     font-size: 120px;
     color: #fff;
@@ -70,23 +100,10 @@
     margin-top: 20px;
 }
 
-html, body, div, span, applet, object,
-iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
-pre, a, abbr, acronym, address, big, cite,
-code, del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var, b,
-u, i, center, dl, dt, dd, ol, ul, li, fieldset,
-form, label, legend, table, caption, tbody,
-tfoot, thead, tr, th, td, article, aside,
-canvas, details, embed, figure, figcaption,
-footer, header, hgroup, menu, nav, output, ruby,
-section, summary, time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;}
+.content a:hover {
+    background-color: #fff;
+    color: #000;
+}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -2030,7 +2047,7 @@ input, select, textarea {
 			display: block;
 			font-weight: 700;
 			letter-spacing: 0.25em;
-			font-size: 1.2em;
+			font-size: 0.9em;
 			width: 25em;
 			height: 3.25em;
 			top: -3.25em;
