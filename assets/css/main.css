@@ -201,7 +201,7 @@ input, select, textarea {
 		@media screen and (max-width: 1680px) {
 
 			.container {
-				width: 70em;
+				width: 80em;
 			}
 
 		}
@@ -1097,7 +1097,7 @@ input, select, textarea {
 				}
 
 				.row > .col-12-medium {
-					width: 100%;
+					width: 90%;
 				}
 
 				.row > .off-12-medium {
@@ -1539,7 +1539,6 @@ input, select, textarea {
 		-webkit-transition: all .25s ease-in-out;
 		-ms-transition: all .25s ease-in-out;
 		transition: all .25s ease-in-out;
-		-webkit-appearance: none;
 		display: block;
 		border: 0;
 		background: #eee;
@@ -1660,7 +1659,7 @@ input, select, textarea {
 		outline: 0;
 		cursor: pointer;
 		padding: 0 2.25em 0 2.25em;
-		font-size: 0.9em;
+		font-size: 1em;
 		min-width: 12em;
 		height: 4em;
 		line-height: 4em;
@@ -1688,7 +1687,7 @@ input, select, textarea {
 		input[type="reset"].style1,
 		button.style1,
 		.button.style1 {
-			background: #e97770 url("images/overlay.png");
+			background: #8e0618 url("images/overlay.png");
 			color: #fff;
 		}
 
@@ -1697,7 +1696,8 @@ input, select, textarea {
 			input[type="reset"].style1:hover,
 			button.style1:hover,
 			.button.style1:hover {
-				background-color: #f98780;
+				background-color: #9e061a;
+				font-size: 1.1em;
 			}
 
 			input[type="button"].style1:active,
@@ -1705,7 +1705,7 @@ input, select, textarea {
 			input[type="reset"].style1:active,
 			button.style1:active,
 			.button.style1:active {
-				background-color: #d96760;
+				background-color: #910618;
 			}
 
 		input[type="button"].style2,
@@ -1982,8 +1982,8 @@ input, select, textarea {
 			text-transform: uppercase;
 			display: block;
 			font-weight: 700;
-			letter-spacing: 0.25em;
-			font-size: 0.9em;
+			letter-spacing: 0.4em;
+			font-size: 1.2em;
 			width: 25em;
 			height: 3.25em;
 			top: -3.25em;
@@ -2018,8 +2018,8 @@ input, select, textarea {
 			}
 
 		.wrapper.style1 {
-			background: #1e1e1e url("images/overlay.png");
-			color: #eee;
+			background: linear-gradient(#1e1e1e, #121212);
+			color: #982c2c;
 			color: rgba(255, 255, 255, 0.75);
 		}
 
@@ -2077,9 +2077,20 @@ input, select, textarea {
 		justify-content: center;
 		position: relative;
 		height: 24em;
-		background: url("../../images/Background.png") center center;
+		background: #0000006b;
 		background-size: cover;
 		padding: 0;
+		overflow: hidden;
+	}
+
+	#headerVideo {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: -1;
 	}
 
 		#header:before {
@@ -2090,10 +2101,12 @@ input, select, textarea {
 			width: 100%;
 			height: 100%;
 			background: "images/overlay.png";
+			object-fit: cover;
+			z-index: 0;
 		}
 
 		.homepage #header {
-			height: 42em;
+			height: 46em;
 		}
 
 /* Logo */
@@ -2103,15 +2116,56 @@ input, select, textarea {
 		text-align: center;
 		position: relative;
 		top: 1.5em;
+		z-index: 0;
 	}
 
+	#logo h1 {
+		display: inline-block;
+		font-weight: 600;
+		text-transform: uppercase;
+		color: #fff;
+		letter-spacing: 0.25em;
+		transition: 0.5s;
+		-webkit-text-stroke: 1px #fff;
+		margin: 0;
+		padding: 0;
+	  }
+	  
+	  /* Styles for larger screens */
+	  @media (min-width: 1080px) {
 		#logo h1 {
-			font-weight: 900;
-			text-transform: uppercase;
-			color: #000000;
-			font-size: 4em;
-			letter-spacing: 0.25em;
+		  font-size: 5em; /* Large size for wider screens */
 		}
+		#logo h1:hover {
+		  -webkit-text-stroke: 1px #fff;
+		  font-size: 6em; /* Slightly smaller on hover */
+		  color: transparent;
+		}
+	  }
+	  
+	  /* Styles for medium screens */
+	  @media (max-width: 980px) and (min-width: 737px) {
+		#logo h1 {
+		  font-size: 4em; /* Medium size for medium screens */
+		}
+		#logo h1:hover {
+		  -webkit-text-stroke: 1px #fff;
+		  font-size: 4.5em; /* Slightly smaller on hover */
+		  color: transparent;
+		}
+	  }
+	  
+	  /* Styles for smaller screens */
+	  @media (max-width: 736px) {
+		#logo h1 {
+		  font-size: 2em; /* Small size for smaller screens */
+		}
+		#logo h1:hover {
+		  -webkit-text-stroke: 1px #fff;
+		  font-size: 2.2em; /* Slightly smaller on hover */
+		  color: transparent;
+		}
+	  }
 
 		#logo p {
 			color: #eee;
@@ -2288,7 +2342,7 @@ input, select, textarea {
 /* Footer */
 
 	#footer {
-		background: #151515 url("images/overlay.png");
+		background: #0f0f0f url("images/overlay.png");
 		color: #eee;
 		color: rgba(255, 255, 255, 0.5);
 		padding-bottom: 6em;
