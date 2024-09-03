@@ -12,6 +12,7 @@
     height: 0;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
     position: relative;
+	margin: 2em 0 2em 0;
 }
 .sketchfab-container iframe {
     position: absolute;
