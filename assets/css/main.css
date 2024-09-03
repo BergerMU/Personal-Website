@@ -2660,6 +2660,7 @@ input, select, textarea {
 				padding-bottom: 1px;
 			}
 
+			/* Turned off the titlebar so on smaller screens it won't show up now
 			#titleBar {
 				-moz-backface-visibility: hidden;
 				-webkit-backface-visibility: hidden;
@@ -2677,7 +2678,7 @@ input, select, textarea {
 				width: 100%;
 				z-index: 10001;
 				background: none;
-			}
+			} */
 
 				#titleBar .title {
 					display: none;
