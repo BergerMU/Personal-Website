@@ -1478,6 +1478,7 @@ input, select, textarea {
 			font-size: 3em;
 			letter-spacing: 0.075em;
 			line-height: 1.5em;
+			margin: 1.5em 0 0.75em 0;
 		}
 
 		header.style1 h2 {
@@ -1485,15 +1486,16 @@ input, select, textarea {
 			font-size: 1.5em;
 			letter-spacing: 0.075em;
 			line-height: 1.5em;
+			margin: 0.75em 0 0.25em 0;
 		}
 
 		header.style1 p {
 			color: #ffffff;
 			display: block;
-			margin: 1.15em 0 0 0;
 			font-size: 1.3em;
 			letter-spacing: 0.075em;
 			line-height: 1.5em;
+			margin: 0.5em 0 0.5em 0;
 		}
 
 /* Table */
