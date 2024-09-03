@@ -1472,15 +1472,22 @@ input, select, textarea {
 		padding: 3em 0 3em 0;
 	}
 
+		header.style1 h1 {
+			font-weight: 550;
+			font-size: 3em;
+			letter-spacing: 0.075em;
+			line-height: 1.5em;
+		}
+
 		header.style1 h2 {
-			font-weight: 700;
-			font-size: 2em;
+			font-weight: 100;
+			font-size: 1.5em;
 			letter-spacing: 0.075em;
 			line-height: 1.5em;
 		}
 
 		header.style1 p {
-			color: #b1b4b9;
+			color: #ffffff;
 			display: block;
 			margin: 1.15em 0 0 0;
 			font-size: 1.3em;
@@ -1651,7 +1658,7 @@ input, select, textarea {
 		background: #444;
 		text-align: center;
 		text-transform: uppercase;
-		font-weight: 700;
+		font-weight: 100;
 		letter-spacing: 0.25em;
 		text-decoration: none;
 		border-radius: 0.99em;
@@ -1981,16 +1988,16 @@ input, select, textarea {
 			text-align: center;
 			text-transform: uppercase;
 			display: block;
-			font-weight: 700;
+			font-weight: 550;
 			letter-spacing: 0.4em;
-			font-size: 1.2em;
+			font-size: 1.9em;
 			width: 25em;
 			height: 3.25em;
 			top: -3.25em;
 			line-height: 3.25em;
-			margin-bottom: -3.25em;
+			/* margin-bottom: -3.25em; */
 			margin-left: -12.5em;
-			padding-top: 0.5em;
+			/* padding-top: 0.5em; */
 		}
 
 			.wrapper .title:before {
@@ -2137,7 +2144,7 @@ input, select, textarea {
 		  font-size: 5em; /* Large size for wider screens */
 		}
 		#logo h1:hover {
-		  -webkit-text-stroke: 1px #fff;
+		  -webkit-text-stroke: 2px #ffffff;
 		  font-size: 6em; /* Slightly smaller on hover */
 		  color: transparent;
 		}
@@ -2149,7 +2156,7 @@ input, select, textarea {
 		  font-size: 4em; /* Medium size for medium screens */
 		}
 		#logo h1:hover {
-		  -webkit-text-stroke: 1px #fff;
+		  -webkit-text-stroke: 2px #fff;
 		  font-size: 4.5em; /* Slightly smaller on hover */
 		  color: transparent;
 		}
@@ -2161,7 +2168,7 @@ input, select, textarea {
 		  font-size: 2em; /* Small size for smaller screens */
 		}
 		#logo h1:hover {
-		  -webkit-text-stroke: 1px #fff;
+		  -webkit-text-stroke: 2px #fff;
 		  font-size: 2.2em; /* Slightly smaller on hover */
 		  color: transparent;
 		}
