@@ -2028,13 +2028,12 @@ input, select, textarea {
 			}
 
 		.wrapper.style1 {
-			background: linear-gradient(#1e1e1e, #121212);
-			color: #982c2c;
+			background: #1e1e1e;
 			color: rgba(255, 255, 255, 0.75);
 		}
 
 			.wrapper.style1 .title {
-				background: #1e1e1e url("images/overlay.png");
+				background: #1e1e1e;
 				color: #ffffff;
 			}
 
@@ -2043,25 +2042,31 @@ input, select, textarea {
 			}
 
 		.wrapper.style2 {
-			background: #fff;
+			background: #2d2d2d;
+			color: rgba(255, 255, 255, 0.75);
 		}
 
 			.wrapper.style2 .title {
-				background: #fff;
-				color: #484d55;
+				background: #2d2d2d;
+				color: #ffffff;
+			}
+
+			.wrapper.style2 h1, .wrapper.style2 h2, .wrapper.style2 h3, .wrapper.style2 h4, .wrapper.style2 h5, .wrapper.style2 h6, .wrapper.style2 strong, .wrapper.style2 b, .wrapper.style2 a {
+				color: #ffffff;
 			}
 
 		.wrapper.style3 {
-			background: #f3f3f3 url("images/overlay.png");
+			background: #414141;
+			color: rgba(255, 255, 255, 0.75);
 		}
 
 			.wrapper.style3 .title {
-				background: #f3f3f3 url("images/overlay.png");
-				color: #484d55;
+				background: #414141;
+				color: #ffffff;
 			}
 
-			.wrapper.style3 .image {
-				border: solid 10px #fff;
+			.wrapper.style3 h1, .wrapper.style3 h2, .wrapper.style3 h3, .wrapper.style3 h4, .wrapper.style3 h5, .wrapper.style3 h6, .wrapper.style3 strong, .wrapper.style3 b, .wrapper.style3 a {
+				color: #ffffff;
 			}
 
 /* Page Wrapper */
