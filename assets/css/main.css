@@ -2171,7 +2171,7 @@ input, select, textarea {
 	  }
 	  
 	  /* Styles for smaller screens */
-	  @media (max-width: 736px) {
+	  @media (max-width: 737px) {
 		#logo h1 {
 		  font-size: 2em; /* Small size for smaller screens */
 		}
