@@ -1,5 +1,5 @@
 # Welcome to my website!
-**Jbergerdev.com**
+**[Jbergerdev.com](https://Jbergerdev.com)**
 
 ## Preview
 * I am a student at Maryville University studying computer science with a track in AI.
@@ -13,5 +13,3 @@
 * Sketchfab
 * Behance
 * Email
-
-[This is a test link](https://Jbergerdev.com)
