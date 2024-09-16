@@ -14,4 +14,4 @@
 * Behance
 * Email
 
-[This is a test link](Jbergerdev.com)
+[This is a test link](https://Jbergerdev.com)
