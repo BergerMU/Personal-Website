@@ -2176,11 +2176,11 @@ input, select, textarea {
 	  /* Styles for smaller screens */
 	  @media (max-width: 737px) {
 		#logo h1 {
-		  font-size: 2em; /* Small size for smaller screens */
+		  font-size: 4em; /* Small size for smaller screens */
 		}
 		#logo h1:hover {
 		  -webkit-text-stroke: 2px #fff;
-		  font-size: 2.2em; /* Slightly smaller on hover */
+		  font-size: 4em; /* Slightly smaller on hover */
 		  color: transparent;
 		}
 	  }
@@ -2668,7 +2668,7 @@ input, select, textarea {
 				padding-bottom: 1px;
 			}
 
-			/* Turned off the titlebar so on smaller screens it won't show up now
+			/* Turned off the titlebar so on smaller screens it won't show up now */
 			#titleBar {
 				-moz-backface-visibility: hidden;
 				-webkit-backface-visibility: hidden;
@@ -2686,7 +2686,7 @@ input, select, textarea {
 				width: 100%;
 				z-index: 10001;
 				background: none;
-			} */
+			}
 
 				#titleBar .title {
 					display: none;
