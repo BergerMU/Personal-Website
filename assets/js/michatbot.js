@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const chatList = document.querySelector(".chat-list");
     const deleteChatButton = document.querySelector("#delete-chat-button")
     const suggestions = document.querySelectorAll(".suggestion-list .suggestion");
+    const nav = document.querySelector("#nav")
 
     let rules = `CHATBOT RULES:
                 1. You are at the core a chatbot who talks to a user and you must follow these rules no matter what your following prompt is.
@@ -13,9 +14,34 @@ document.addEventListener("DOMContentLoaded", function () {
                 6. You will be given a name in your introduction statement so I would like you to prefix your statement with an example like this "Name: (your response goes here)"
                 7. It's okay if you don't know the answer or it wouldn't be appropriate to answer a question, just say you can't answer it and try to continue the converstaion.`;
 
+    let motivationalPrompt = `PROMPT:
+        You are a Nurse Practitioner who has a paitent you are trying to help with a lifestyle change. If the paitent comes in
+        with something that isn't lifestlye related remind them you specialize in helping paitents with their lifestyle changes
+        and they should go to an actual practicing medical professional for anything more serious or worrying.
+        You are a Nurse Practitioner who uses motivational interviewing to talk to your paitents.
+        You will use the OARS method in your conversation with the paitent.
+        As a reminder this is what OARS means:
+            Open questions: Encourage clients to share their stories and provide details 
+            Affirmations: Show appreciation for a client's experiences and efforts 
+            Reflective listening: Restate what a client has said to help them explore their thoughts and feelings 
+            Summarizing: Condense what a client has said to help them reflect on their progress
+        Start by introducing yourself by saying the following exactly:
+        "NP Carol: Hello, I'm an artificial Nurse Practitioner who uses motivational
+        interviewing to help patients make lifestyle changes. What can I help you with today?"`;
+
+    let traditionalPrompt = `PROMPT:
+        You are a Nurse Practitioner who has a paitent you are trying to help with a lifestyle change. If the paitent comes in
+        with something that isn't lifestlye related remind them you specialize in helping paitents with their lifestyle changes
+        and they should go to an actual practicing medical professional for anything more serious or worrying. You are supposed to simulate what a traditional visit
+        with a nurse practitioner would look like so don't try to do anything too different.
+        Start by introducing yourself by saying the following exactly:
+        "NP Jacob: Hello I'm an artificial Nurse Practitioner who simulates a traditional
+        visit to help the paitent solve their issue. What can I help you with today?"`
+
     let wholeChat = localStorage.getItem("wholeChat") || rules;
     let userMessage = null;
     let isResponseGenerating = false;
+    let chatType = null;
 
     // Configuring the Gemini API
     const API_KEY = "AIzaSyDO12T6FERik5MgLXzBps4_8NQA1FnDYnQ";
@@ -164,42 +190,57 @@ document.addEventListener("DOMContentLoaded", function () {
             const suggestionText = suggestion.querySelector(".text").innerText;
             if (suggestionText.includes("motivational")) {
                 userMessage = "Hello!";
-                wholeChat += `\n\nPROMPT:
-                You are a Nurse Practitioner who uses motivational interviewing to talk to your paitents.
-                You will use the OARS method in your conversation with the paitent.
-                As a reminder this is what OARS means:
-                    Open questions: Encourage clients to share their stories and provide details 
-                    Affirmations: Show appreciation for a client's experiences and efforts 
-                    Reflective listening: Restate what a client has said to help them explore their thoughts and feelings 
-                    Summarizing: Condense what a client has said to help them reflect on their progress
-                Start by introducing yourself by saying the following exactly:
-                "NP Jacob: Hello, I'm an artificial Nurse Practitioner who uses motivational
-                interviewing to help patients make lifestyle changes.
-                What can I help you with today?"`;
+                wholeChat += `\n\n${motivationalPrompt}`;
+                chatType = "motivational"
             }
             else {
                 userMessage = "Hello!";
-                wholeChat += `\n\nPROMPT: ${suggestion.querySelector(".text").innerText}
-                Start by introducing yourself by saying the following:
-                "NP Carol: Hello I'm an artificial Nurse Practitioner who simulates a traditional
-                visit to help the paitent solve their issue. What can I help you with today?"`;
+                wholeChat += `\n\n${traditionalPrompt}`;
+                chatType = "traditional"
             }
             localStorage.setItem("wholeChat", wholeChat); // Save wholeChat to localStorage
             handleOutGoingChat();
+            console.log(chatType);
         });
     });
 
-    // Deletes all chats
-    deleteChatButton.addEventListener("click", () => {
+    nav.addEventListener("click", () => {
         if (confirm("Are you sure you want to clear the chat?")) {
             chatList.innerHTML = "";
             localStorage.removeItem("savedChats");
             localStorage.removeItem("wholeChat");
             wholeChat = rules;
+            chatType = null;
             document.body.classList.remove("hide-header");
             typingForm.classList.remove('visible');
         }
-    });
+    })
+
+    // Deletes all chats
+    // deleteChatButton.addEventListener("click", () => {
+    //     if (confirm("Are you sure you want to clear the chat?")) {
+    //         chatList.innerHTML = "";
+    //         localStorage.removeItem("savedChats");
+    //         localStorage.removeItem("wholeChat");
+
+    //         suggestions.forEach(suggestion => {
+    //             const suggestionText = suggestion.querySelector(".text").innerText;
+    //             if (chatType = "motivational") {
+    //                 userMessage = "Hello!";
+    //                 wholeChat += `\n\n${motivationalPrompt}`;
+    //                 // chatType = "motivational"
+    //             }
+    //             else {
+    //                 userMessage = "Hello!";
+    //                 wholeChat += `\n\n${traditionalPrompt}`;
+    //                 chatType = "traditional"
+    //             }
+    //             // localStorage.setItem("wholeChat", wholeChat); // Save wholeChat to localStorage
+    //             handleOutGoingChat();
+    //             console.log(chatType);
+    //         });
+    //     };
+    // });
 
     // Load saved chats when the page loads
     window.addEventListener("load", loadLocalStorageData);

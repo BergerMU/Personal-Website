@@ -12,9 +12,9 @@
 
 :root {
     /* Dark mode colors */
-    --text-color: #f3f3f3;
-    --subheading-color: #bfbfbf;
-    --placeholder-color: #A6A6A6;
+    --text-color: #e7e7e7;
+    --subheading-color: #bcbcbc;
+    --placeholder-color: #cdcdcd;
     --primary-color: #1c1c1c;
     --secondary-color: #383838;
     --secondary-hovor-color: #444;
@@ -71,6 +71,13 @@ body.hide-header .header {
     color: var(--subheading-color);
 }
 
+.header .description {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--placeholder-color);
+}
+
 .suggestion-list {
     margin-top: 0.5vh;
     list-style: none;
@@ -108,7 +115,7 @@ body.hide-header .header {
     height: 50px;
     width: 50px;
     font-size: 1.8rem;
-    margin-top: 2.5rem;
+    margin-top: 0.6rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -294,6 +301,7 @@ body.hide-header .header {
 #nav {
     position:absolute;
     display: block;
+    cursor: pointer;
     top: 2.5em;
     left: 0;
     width: 100%;
@@ -314,11 +322,7 @@ body.hide-header .header {
             padding: 0 1em 0 1em;
         }
 
-            #nav > ul > li > ul {
-                display: none;
-            }
-
-            #nav > ul > li > a, #nav > ul > li > span {
+            #nav > ul > li > a {
                 display: block;
                 color: #eee;
                 color: rgba(255, 255, 255, 0.75);
@@ -340,10 +344,6 @@ body.hide-header .header {
                 color: #fff;
             }
 
-            #nav > ul > li.active > a, #nav > ul > li.active > span {
-                color: #fff;
-            }
-
 @media (max-width: 768px) {
     .header :is(.title, .subtitle) {
         font-size: 5vw;
@@ -357,12 +357,19 @@ body.hide-header .header {
 
 @media (max-width: 765px) {
     .header :is(.title, .subtitle) {
-        font-size: 8vw;
-        line-height: 10vw;
+        font-size: 10vw;
+        line-height: 13vw;
+    }
+
+    .header .description {
+        font-size: 4.5vw;
+        padding: .9rem;
     }
 
     .header .subtitle {
         font-size: 6vw;
+        line-height: 7vw;
+        padding: 0 0 1rem;
     }
 
     .message .avatar {
@@ -406,9 +413,15 @@ body.hide-header .header {
 
     .suggestion-list {
         flex-direction: column;
+        height: 15rem;
     }
     
     .suggestion-list .suggestion {
         width: 100%;
+        height:min-content;
+    }
+
+    .suggestion-list .suggestion .text {
+        font-size: 1rem;
     }
 }
