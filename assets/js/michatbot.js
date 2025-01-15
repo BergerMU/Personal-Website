@@ -44,10 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let isResponseGenerating = false;
     let chatType = null;
 
-    // Configuring the Gemini API
-    const API_KEY = "AIzaSyDO12T6FERik5MgLXzBps4_8NQA1FnDYnQ";
-    const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
-
     const loadLocalStorageData = () => {
         const savedChats = localStorage.getItem("savedChats");
         document.body.classList.toggle("hide-header", savedChats);
@@ -104,10 +100,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const generateAPIResponse = async (incomingMessageDiv) => {
-        const textElement = incomingMessageDiv.querySelector(".text"); // Get text element
-
+        const textElement = incomingMessageDiv.querySelector(".text");
         try {
-            const response = await fetch(API_URL, {
+            const API_KEY = "AIzaSyDQf6RiaDDRqFThotZowfUVbnD5bB0dGtU";
+            const modelType = "gemini-1.5-flash";
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modelType}:generateContent?key=${API_KEY}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

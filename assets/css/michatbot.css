@@ -28,12 +28,14 @@ body {
     background: var(--primary-color);
 }
 
-.header, .typing-area {
+.header,
+.typing-area {
     color: var(--text-color);
     background: var(--primary-color);
 }
 
-.header, .chat-list .message .typing-form {
+.header,
+.chat-list .message .typing-form {
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -81,7 +83,7 @@ body.hide-header .header {
 .suggestion-list {
     margin-top: 0.5vh;
     list-style: none;
-    display:flex;
+    display: flex;
     flex-direction: row;
     gap: 1.25rem;
     justify-content: center;
@@ -98,7 +100,7 @@ body.hide-header .header {
     align-items: flex-end;
     justify-content: space-between;
     border-radius: 0.75rem;
-    background:var(--secondary-color);
+    background: var(--secondary-color);
     transition: .5s;
 }
 
@@ -202,6 +204,7 @@ body.hide-header .header {
     0% {
         background-position: -800px 0;
     }
+
     100% {
         background-position: 800px 0;
     }
@@ -271,7 +274,7 @@ body.hide-header .header {
 }
 
 .typing-area .icon:hover {
-    background: var(--secondary-hovor-color)!important;
+    background: var(--secondary-hovor-color) !important;
 }
 
 .typing-area .input-wrapper .icon {
@@ -281,12 +284,12 @@ body.hide-header .header {
     border: none;
     background: none;
     color: var(--text-color);
-    align-self:last baseline;
+    align-self: last baseline;
     transform: scale(0);
     transition: transform 0.2s ease;
 }
 
-.typing-area .input-wrapper .typing-input:valid ~ .icon {
+.typing-area .input-wrapper .typing-input:valid~.icon {
     transform: scale(1);
 }
 
@@ -299,7 +302,7 @@ body.hide-header .header {
 
 /* Nav */
 #nav {
-    position:absolute;
+    position: absolute;
     display: block;
     cursor: pointer;
     top: 2.5em;
@@ -308,41 +311,41 @@ body.hide-header .header {
     text-align: center;
 }
 
-    #nav > ul {
-        display: inline-block;
-        border-radius: 0.35em;
-        box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.25);
-        padding: 0 1em 0 1em;
-    	background-color: #1c1c1c;
+#nav>ul {
+    display: inline-block;
+    border-radius: 0.35em;
+    box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.25);
+    padding: 0 1em 0 1em;
+    background-color: #1c1c1c;
 }
 
-        #nav > ul > li {
-            display: inline-block;
-            text-align: center;
-            padding: 0 1em 0 1em;
-        }
+#nav>ul>li {
+    display: inline-block;
+    text-align: center;
+    padding: 0 1em 0 1em;
+}
 
-            #nav > ul > li > a {
-                display: block;
-                color: #eee;
-                color: rgba(255, 255, 255, 0.75);
-                text-transform: uppercase;
-                text-decoration: none;
-                font-size: 0.7em;
-                letter-spacing: 0.25em;
-                height: 5em;
-                line-height: 5em;
-                -moz-transition: all .25s ease-in-out;
-                -webkit-transition: all .25s ease-in-out;
-                -o-transition: all .25s ease-in-out;
-                -ms-transition: all .25s ease-in-out;
-                transition: all .25s ease-in-out;
-                outline: 0;
-            }
+#nav>ul>li>a {
+    display: block;
+    color: #eee;
+    color: rgba(255, 255, 255, 0.75);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.7em;
+    letter-spacing: 0.25em;
+    height: 5em;
+    line-height: 5em;
+    -moz-transition: all .25s ease-in-out;
+    -webkit-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    -ms-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+    outline: 0;
+}
 
-            #nav > ul > li:hover > a {
-                color: #fff;
-            }
+#nav>ul>li:hover>a {
+    color: #fff;
+}
 
 @media (max-width: 768px) {
     .header :is(.title, .subtitle) {
@@ -415,10 +418,10 @@ body.hide-header .header {
         flex-direction: column;
         height: 15rem;
     }
-    
+
     .suggestion-list .suggestion {
         width: 100%;
-        height:min-content;
+        height: min-content;
     }
 
     .suggestion-list .suggestion .text {
