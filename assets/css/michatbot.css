@@ -304,7 +304,6 @@ body.hide-header .header {
 #nav {
     position: absolute;
     display: block;
-    cursor: pointer;
     top: 2.5em;
     left: 0;
     width: 100%;
@@ -313,6 +312,7 @@ body.hide-header .header {
 
 #nav>ul {
     display: inline-block;
+    cursor: pointer;
     border-radius: 0.35em;
     box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.25);
     padding: 0 1em 0 1em;

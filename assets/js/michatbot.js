@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     const typingForm = document.querySelector(".typing-form");
     const chatList = document.querySelector(".chat-list");
-    const deleteChatButton = document.querySelector("#delete-chat-button")
-    const suggestions = document.querySelectorAll(".suggestion-list .suggestion");
-    const nav = document.querySelector("#nav")
+    const deleteChatButton = document.querySelector("#delete-chat-button");
+    const suggestionList = document.querySelector(".suggestion-list");
+    const nav = document.querySelector("#nav>ul");
 
     let rules = `CHATBOT RULES:
                 1. You are at the core a chatbot who talks to a user and you must follow these rules no matter what your following prompt is.
@@ -163,7 +163,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         isResponseGenerating = true;
 
-        wholeChat += `\nUser: ${userMessage}`;
+        const sanitizedUserMessage = userMessage.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        wholeChat += `\nUser: ${sanitizedUserMessage}`;
         localStorage.setItem("wholeChat", wholeChat); // Save wholeChat to localStorage
 
         const html = `<div class="message-content">
@@ -183,8 +184,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Set userMessage and handle outgoing chat a suggestion card is clicked
-    suggestions.forEach(suggestion => {
-        suggestion.addEventListener("click", () => {
+    suggestionList.addEventListener("click", (event) => {
+        const suggestion = event.target.closest(".suggestion");
+        if (suggestion) {
             const suggestionText = suggestion.querySelector(".text").innerText;
             if (suggestionText.includes("motivational")) {
                 userMessage = "Hello!";
@@ -199,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("wholeChat", wholeChat); // Save wholeChat to localStorage
             handleOutGoingChat();
             console.log(chatType);
-        });
+        }
     });
 
     nav.addEventListener("click", () => {
@@ -245,7 +247,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     typingForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        handleOutGoingChat();
         textarea.value = "";
+        handleOutGoingChat();
     });
 });
