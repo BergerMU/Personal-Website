@@ -303,11 +303,15 @@ body.hide-header .header {
 /* Nav */
 #nav {
     position: absolute;
-    display: block;
+    display: none;
     top: 2.5em;
     left: 0;
     width: 100%;
     text-align: center;
+}
+
+#nav.visible {
+    display: block;
 }
 
 #nav>ul {

@@ -48,6 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const savedChats = localStorage.getItem("savedChats");
         document.body.classList.toggle("hide-header", savedChats);
         typingForm.classList.toggle('visible', savedChats);
+        nav.parentElement.classList.toggle("visible", savedChats);
+
 
 
         if (savedChats) {
@@ -102,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const generateAPIResponse = async (incomingMessageDiv) => {
         const textElement = incomingMessageDiv.querySelector(".text");
         try {
-            const API_KEY = "AIzaSyDQf6RiaDDRqFThotZowfUVbnD5bB0dGtU";
+            const API_KEY = "AIzaSyDObMbVFFkxTpchXhaTDkdjSeeeYRD-KZ8";
             const modelType = "gemini-1.5-flash";
             const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modelType}:generateContent?key=${API_KEY}`, {
                 method: "POST",
@@ -179,6 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
         typingForm.reset();
         chatList.scrollTo(0, chatList.scrollHeight); //Scrolls to the bottom automatically
         document.body.classList.add("hide-header"); //hides header once typing starts
+        nav.parentElement.classList.add("visible");
         typingForm.classList.add('visible');
         showLoadingAnimation(); // Show loading animation immediately
     }
@@ -205,15 +208,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     nav.addEventListener("click", () => {
-        if (confirm("Are you sure you want to clear the chat?")) {
-            chatList.innerHTML = "";
-            localStorage.removeItem("savedChats");
-            localStorage.removeItem("wholeChat");
-            wholeChat = rules;
-            chatType = null;
-            document.body.classList.remove("hide-header");
-            typingForm.classList.remove('visible');
-        }
+        chatList.innerHTML = "";
+        localStorage.removeItem("savedChats");
+        localStorage.removeItem("wholeChat");
+        wholeChat = rules;
+        chatType = null;
+        document.body.classList.remove("hide-header");
+        typingForm.classList.remove('visible');
+        nav.parentElement.classList.remove('visible');
     })
 
     // Deletes all chats
