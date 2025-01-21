@@ -180,10 +180,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         typingForm.reset();
         chatList.scrollTo(0, chatList.scrollHeight); //Scrolls to the bottom automatically
-        document.body.classList.add("hide-header"); //hides header once typing starts
+        showLoadingAnimation(); // Show loading animation immediately
+
+        // Hides header, shows navigation menu, and shows typing form
+        document.body.classList.add("hide-header");
         nav.parentElement.classList.add("visible");
         typingForm.classList.add('visible');
-        showLoadingAnimation(); // Show loading animation immediately
     }
 
     // Set userMessage and handle outgoing chat a suggestion card is clicked
