@@ -1702,6 +1702,8 @@ input, select, textarea {
 		.button.style1 {
 			background: #8e0618 url("images/overlay.png");
 			color: #fff;
+			margin-top: 1em;
+			margin-bottom: 1em;
 		}
 
 			input[type="button"].style1:hover,
@@ -1710,7 +1712,7 @@ input, select, textarea {
 			button.style1:hover,
 			.button.style1:hover {
 				background-color: #9e061a;
-				font-size: 1.1em;
+				scale: 125%;
 			}
 
 			input[type="button"].style1:active,
@@ -2429,13 +2431,22 @@ input, select, textarea {
 
 		/* Logo */
 
-			#logo {
-				margin-top: -0.5em !important;
+		#logo {
+			text-align: center;
+			padding-left: 2em;
+			padding-right: 2em;
+		}
+
+			#logo h1 {
+				letter-spacing: 0.2em;
+				font-size: 5em;
 			}
 
-				#logo h1 {
-					font-size: 1.75em;
-				}
+			#logo h1:hover {
+				font-size: 8em;
+				letter-spacing: 0.2em;
+				line-height: 1em;
+			}
 
 		/* Intro */
 
@@ -2510,8 +2521,19 @@ input, select, textarea {
 		/* Logo */
 
 			#logo {
-				top: 0;
+				text-align: center;
+				padding-left: 2em;
+				padding-right: 2em;
 			}
+
+				#logo h1 {
+					letter-spacing: 0.2em;
+				}
+
+				#logo h1:hover {
+					letter-spacing: 0.2em;
+					line-height: 1em;
+				}
 
 		/* Intro */
 
@@ -2594,6 +2616,19 @@ input, select, textarea {
 					margin: 0;
 				}
 
+		/* Image */
+
+	.image {
+		display: inline;
+	}
+
+		.image.featured {
+			display: inline-block;
+			position: relative;
+			width: 60%;
+			margin: 0 0 2em 0;
+		}
+
 		/* Button */
 
 			input[type="button"],
@@ -2601,9 +2636,9 @@ input, select, textarea {
 			input[type="reset"],
 			button,
 			.button {
-				display: block;
-				width: 100%;
-				font-size: 1em;
+				/* display: block; */
+				/* width: 100%; */
+				font-size: 0.8em;
 				max-width: 30em;
 				margin: 0 auto;
 			}
@@ -2654,7 +2689,7 @@ input, select, textarea {
 			}
 
 				.wrapper .title {
-					font-size: 0.9em;
+					font-size: 1.2em;
 					width: 18em;
 					height: 2.5em;
 					top: -2.5em;
@@ -2689,8 +2724,9 @@ input, select, textarea {
 			}
 
 				#logo h1 {
-					font-size: 1em;
+					font-size: 2em;
 					letter-spacing: 0.2em;
+					line-height: 1em;
 				}
 
 				#logo p {
@@ -2698,27 +2734,6 @@ input, select, textarea {
 					display: block;
 					letter-spacing: 0.2em;
 					font-size: 0.9em;
-				}
-
-		/* Intro */
-
-			#intro {
-				text-align: center;
-				padding-right: 2em;
-				padding-left: 2em;
-				padding-bottom: 5em;
-				margin: 0 auto;
-			}
-
-				#intro p.style1 {
-					margin-bottom: 1.5em;
-				}
-
-				#intro p.style2 {
-					font-size: 1.5em;
-					letter-spacing: 0.05em;
-					line-height: 1.25em;
-					padding: 1.25em;
 				}
 
 		/* Features */
@@ -2757,29 +2772,5 @@ input, select, textarea {
 					border-top: 0;
 					padding-top: 0;
 				}
-
-		/* Copyright */
-
-			#copyright {
-				padding-top: 0;
-				margin-top: 4em;
-				border-top: 0;
-			}
-
-				#copyright ul {
-					padding: 1em 2em;
-					width: 100%;
-				}
-
-					#copyright ul li {
-						display: block;
-						margin: 0.5em 0 0 0;
-						border-left: 0;
-						padding: 0;
-					}
-
-						#copyright ul li:first-child {
-							margin-top: 0;
-						}
 
 	}
