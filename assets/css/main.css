@@ -2175,18 +2175,6 @@ input, select, textarea {
 		  color: transparent;
 		}
 	  }
-	  
-	  /* Styles for smaller screens */
-	  @media (max-width: 737px) {
-		#logo h1 {
-		  font-size: 4em; /* Small size for smaller screens */
-		}
-		#logo h1:hover {
-		  -webkit-text-stroke: 2px #fff;
-		  font-size: 4em; /* Slightly smaller on hover */
-		  color: transparent;
-		}
-	  }
 
 		#logo p {
 			color: #eee;
@@ -2442,12 +2430,6 @@ input, select, textarea {
 				font-size: 5em;
 			}
 
-			#logo h1:hover {
-				font-size: 8em;
-				letter-spacing: 0.2em;
-				line-height: 1em;
-			}
-
 		/* Intro */
 
 			#intro {
@@ -2528,11 +2510,6 @@ input, select, textarea {
 
 				#logo h1 {
 					letter-spacing: 0.2em;
-				}
-
-				#logo h1:hover {
-					letter-spacing: 0.2em;
-					line-height: 1em;
 				}
 
 		/* Intro */
