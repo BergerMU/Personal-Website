@@ -220,32 +220,6 @@ document.addEventListener("DOMContentLoaded", function () {
         nav.parentElement.classList.remove('visible');
     })
 
-    // Deletes all chats
-    // deleteChatButton.addEventListener("click", () => {
-    //     if (confirm("Are you sure you want to clear the chat?")) {
-    //         chatList.innerHTML = "";
-    //         localStorage.removeItem("savedChats");
-    //         localStorage.removeItem("wholeChat");
-
-    //         suggestions.forEach(suggestion => {
-    //             const suggestionText = suggestion.querySelector(".text").innerText;
-    //             if (chatType = "motivational") {
-    //                 userMessage = "Hello!";
-    //                 wholeChat += `\n\n${motivationalPrompt}`;
-    //                 // chatType = "motivational"
-    //             }
-    //             else {
-    //                 userMessage = "Hello!";
-    //                 wholeChat += `\n\n${traditionalPrompt}`;
-    //                 chatType = "traditional"
-    //             }
-    //             // localStorage.setItem("wholeChat", wholeChat); // Save wholeChat to localStorage
-    //             handleOutGoingChat();
-    //             console.log(chatType);
-    //         });
-    //     };
-    // });
-
     // Load saved chats when the page loads
     window.addEventListener("load", loadLocalStorageData);
 
