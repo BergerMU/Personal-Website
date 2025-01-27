@@ -169,9 +169,9 @@ document.addEventListener("DOMContentLoaded", function () {
         wholeChat += `\nUser: ${sanitizedUserMessage}`;
         localStorage.setItem("wholeChat", wholeChat); // Save wholeChat to localStorage
 
-        const html = `<div class="message-content">
-                        <span class="icon material-symbols-rounded">person</span>
+        const html = `<div class="message-content" id="user">
                         <p class="text"></p>
+                        <span class="icon material-symbols-rounded">person</span>
                       </div>`;
 
         const outgoingMessageDiv = createMessageElement(html, "outgoing");

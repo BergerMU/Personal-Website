@@ -142,7 +142,7 @@ body.hide-header .header {
 .chat-list .message .message-content {
     display: flex;
     gap: 1.5rem;
-    padding: 0.5rem;
+    padding: 1rem;
     width: 100%;
 }
 
@@ -153,6 +153,11 @@ body.hide-header .header {
     cursor: default;
     color: white;
     align-self: flex-start;
+}
+
+#user {
+    justify-content: right;
+    
 }
 
 .chat-list .message .avatar {
@@ -363,6 +368,10 @@ body.hide-header .header {
 }
 
 @media (max-width: 765px) {
+    body {
+        padding-top: 3em;
+    }
+
     .header :is(.title, .subtitle) {
         font-size: 10vw;
         line-height: 13vw;
@@ -420,7 +429,6 @@ body.hide-header .header {
 
     .suggestion-list {
         flex-direction: column;
-        height: 15rem;
     }
 
     .suggestion-list .suggestion {
