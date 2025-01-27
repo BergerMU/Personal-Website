@@ -369,7 +369,7 @@ body.hide-header .header {
 
 @media (max-width: 765px) {
     body {
-        padding-top: 3em;
+        padding-top: 6em;
     }
 
     .header :is(.title, .subtitle) {
@@ -421,10 +421,6 @@ body.hide-header .header {
         color: var(--text-color);
         font-weight: 1;
         word-break: break-word;
-    }
-
-    .chat-list {
-        max-height: 55vh;
     }
 
     .suggestion-list {
