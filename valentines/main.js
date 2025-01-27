@@ -116,7 +116,7 @@ noBox.addEventListener("click", (event) => {
     sadText.style.textAlign = "center";
     sadText.style.transform = "translate(-50%, -50%)";
     sadText.className = "click-message";
-    sadText.style.fontSize = "30px";
+    sadText.style.fontSize = "calc(15px + 1.5vw)";
     sadText.style.color = "white";
     sadText.style.webkitTextStrokeWidth = "1px";
     sadText.style.webkitTextStrokeColor = "black";
@@ -181,39 +181,25 @@ yesBox.addEventListener("click", () => {
     const img = document.createElement("img");
     img.src = "images/hugging_1.gif";
     img.id = "hug_1";
-    img.style.marginTop = "30vw";
-    img.style.marginLeft = "60vw";
-    img.style.scale = "150%";
     document.body.appendChild(img);
 
     const img2 = document.createElement("img");
     img2.src = "images/hugging_2.gif";
     img2.id = "hug_2";
-    img2.style.marginTop = "25vw";
-    img2.style.marginLeft = "-60vw";
-    img2.style.scale = "200%";
     document.body.appendChild(img2);
 
     const img3 = document.createElement("img");
     img3.src = "images/iloveu.gif";
     img3.id = "iloveu";
-    img3.style.marginTop = "-30vw";
-    img3.style.marginLeft = "60vw";
-    img3.style.scale = "150%";
     document.body.appendChild(img3);
 
     const img4 = document.createElement("img");
     img4.src = "images/pusheen.gif";
     img4.id = "push";
-    img4.style.marginTop = "-30vw";
-    img4.style.marginLeft = "-60vw";
-    img4.style.scale = "150%";
     document.body.appendChild(img4);
 
     const img5 = document.createElement("img");
     img5.src = "images/chococat_1.gif";
     img5.id = "choco";
-    img5.style.marginTop = "30vw";
-    img5.style.scale = "150%";
     document.body.appendChild(img5);
 });

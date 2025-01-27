@@ -27,7 +27,7 @@ body {
 
 .header h1 {
     color: white;
-    font-size: 3vw;
+    font-size:calc(15px + 1.5vw);
 }
 
 .button-container {
@@ -72,4 +72,68 @@ img {
 
 #kor {
     margin-top: -50vh;
+}
+
+#hug_1 {
+    margin-top: 30vw;
+    margin-left: 60vw;
+    scale: 150%;
+}
+
+#hug_2 {
+    margin-top: 25vw;
+    margin-left: -60vw;
+    scale: 200%;
+}
+
+#iloveu {
+    margin-top: -30vw;
+    margin-left: 60vw;
+    scale: 150%;
+}
+
+#push {
+    margin-top: -30vw;
+    margin-left: -60vw;
+    scale: 150%;
+}
+
+#choco {
+    margin-top: 30vw;
+    scale: 150%;
+}
+
+@media (max-width: 426px) {
+    img {
+        position: absolute;
+    }
+
+    #hug_1 {
+        margin-right: 60vw;
+        margin-top: 150vw;
+        scale: 70%;
+    }
+    
+    #hug_2 {
+        margin-top: -170vw;
+        margin-left: -60vw;
+        scale: 80%;
+    }
+    
+    #iloveu {
+        margin-top: -160vw;
+        margin-left: 60vw;
+        scale: 50%;
+    }
+    
+    #push {
+        margin-top: 60vw;
+        margin-left: -60vw;
+        scale: 0%;
+    }
+    
+    #choco {
+        margin-top: 30vw;
+        scale: 120%;
+    }
 }
