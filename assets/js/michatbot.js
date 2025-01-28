@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const generateAPIResponse = async (incomingMessageDiv) => {
         const textElement = incomingMessageDiv.querySelector(".text");
         try {
-            const API_KEY = "AIzaSyDObMbVFFkxTpchXhaTDkdjSeeeYRD-KZ8";
+            const API_KEY = process.env.API_KEY_1;
             const modelType = "gemini-1.5-flash";
             const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modelType}:generateContent?key=${API_KEY}`, {
                 method: "POST",
