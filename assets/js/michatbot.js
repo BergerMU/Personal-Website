@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const typingForm = document.querySelector(".typing-form");
     const chatList = document.querySelector(".chat-list");
-    const deleteChatButton = document.querySelector("#delete-chat-button");
     const suggestionList = document.querySelector(".suggestion-list");
     const nav = document.querySelector("#nav>ul");
 
@@ -49,8 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.classList.toggle("hide-header", savedChats);
         typingForm.classList.toggle('visible', savedChats);
         nav.parentElement.classList.toggle("visible", savedChats);
-
-
 
         if (savedChats) {
             // Restored saved chats
