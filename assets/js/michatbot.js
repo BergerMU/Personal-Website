@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     typingForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        textarea.value = "";
         handleOutGoingChat();
+        textarea.value = "";
     });
 });
