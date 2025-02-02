@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log(window.SECRET_API_KEY);
+    fetch('/api/config')
+    .then(response => response.json())
+    .then(data => {
+      console.log("Fetched Env Variable:", data.key);
+    })
+    .catch(error => console.error("Error fetching API:", error));
+
     const typingForm = document.querySelector(".typing-form");
     const chatList = document.querySelector(".chat-list");
     const suggestionList = document.querySelector(".suggestion-list");
