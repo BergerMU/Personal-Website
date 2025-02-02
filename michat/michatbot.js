@@ -1,5 +1,3 @@
-import { Analytics } from "@vercel/analytics/react"
-
 document.addEventListener("DOMContentLoaded", function () {
     const typingForm = document.querySelector(".typing-form");
     const chatList = document.querySelector(".chat-list");
