@@ -105,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
             const apiKeyResponse = await fetch('/api/config');
             const apiKeyData = await apiKeyResponse.json();
             const api_key = apiKeyData.key;
-            console.log("Fetched Env Variable:", api_key);
 
             const modelType = "gemini-1.5-flash";
             const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modelType}:generateContent?key=${api_key}`, {
