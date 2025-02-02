@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    console.log(window.SECRET_API_KEY);
     const typingForm = document.querySelector(".typing-form");
     const chatList = document.querySelector(".chat-list");
     const suggestionList = document.querySelector(".suggestion-list");
