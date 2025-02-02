@@ -101,31 +101,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const generateAPIResponse = async (incomingMessageDiv) => {
         const textElement = incomingMessageDiv.querySelector(".text");
         try {
+            // Gets Vercel API key
+            const apiKeyResponse = await fetch('/api/config');
+            const apiKeyData = await apiKeyResponse.json();
+            const api_key = apiKeyData.key;
+            console.log("Fetched Env Variable:", api_key);
 
-            //Gets Vercel API key
-            fetch('/api/config')
-                .then(response => response.json())
-                .then(data => {
-                    const api_key = data.key
-                    console.log("Fetched Env Variable:", api_key);
-
-                    const modelType = "gemini-1.5-flash";
-                    const response = fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modelType}:generateContent?key=${api_key}`, {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            contents: [{
-                                role: "user",
-                                parts: [{ text: wholeChat }]
-                            }]
-                        })
-                    });
-
-
+            const modelType = "gemini-1.5-flash";
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modelType}:generateContent?key=${api_key}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    contents: [{
+                        role: "user",
+                        parts: [{ text: wholeChat }]
+                    }]
                 })
-                .catch(error => console.error("Error fetching API:", error));
+            });
 
             // Verifies the response is recieved
             const data = await response.json();
