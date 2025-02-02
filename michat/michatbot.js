@@ -1,11 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch('/api/config')
-    .then(response => response.json())
-    .then(data => {
-      console.log("Fetched Env Variable:", data.key);
-    })
-    .catch(error => console.error("Error fetching API:", error));
-
     const typingForm = document.querySelector(".typing-form");
     const chatList = document.querySelector(".chat-list");
     const suggestionList = document.querySelector(".suggestion-list");
@@ -108,9 +101,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const generateAPIResponse = async (incomingMessageDiv) => {
         const textElement = incomingMessageDiv.querySelector(".text");
         try {
-            const API_KEY = "AIzaSyDObMbVFFkxTpchXhaTDkdjSeeeYRD-KZ8";
+
+            //Gets Vercel API key
+            fetch('/api/config')
+            .then(response => response.json())
+            .then(data => {
+                api_key = data.key
+              console.log("Fetched Env Variable:", api_key);
+            })
+            .catch(error => console.error("Error fetching API:", error));
+
             const modelType = "gemini-1.5-flash";
-            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modelType}:generateContent?key=${API_KEY}`, {
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modelType}:generateContent?key=${api_key}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
