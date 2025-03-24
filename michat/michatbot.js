@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const apiKeyData = await apiKeyResponse.json();
             const api_key = apiKeyData.key;
 
-            const modelType = "gemini-1.5-flash";
+            const modelType = "gemma-3-27b-it";
             const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modelType}:generateContent?key=${api_key}`, {
                 method: "POST",
                 headers: {
