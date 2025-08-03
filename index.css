@@ -38,6 +38,7 @@ header {
 img {
     align-self: center;
     height: auto;
+    max-width: 80vw;
     width: auto;
     border-radius: 3rem;
     border-width: .5rem;
