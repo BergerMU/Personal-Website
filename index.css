@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css2?family=Asta+Sans:wght@300..800&family=Readex+Pro:wght,HEXP@160..700,0..100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Readex Pro", sans-serif;
+}
+
+/* Global Colors */
+:root {
+    --global-orange: #d2691eff;
+    --global-cream: #f5f5dcff;
+    --global-dark: #461220;
+    --global-blue: #5db7deff;
+    --global-dark-blue: #154f69;
+}
+
+/* Big Sections */
+body {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+    max-height: fit-content;
+    align-items: center;
+    color: #1c1c1c;
+    background: linear-gradient(to right, var(--global-orange) 50%, var(--global-cream) 50%);
+}
+
+img {
+    align-self: center;
+    height: auto;
+    width: auto;
+    border-radius: 3rem;
+    border-width: .5rem;
+    border-style: solid;
+    border-color: var(--global-dark);
+}
+
+/* Text sizes */
+h1 {
+    font-family: "Readex Pro", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-variation-settings: "HEXP" 25;
+    color: var(--global-dark);
+    font-size: 7vw;
+}
+
+h2 {
+    font-family: "Readex Pro", sans-serif;
+    font-weight: 600;
+    font-variation-settings: "HEXP" 25;
+    font-size: 5vw;
+    color: var(--global-blue);
+    padding: 1rem 0rem;
+}
+
+p {
+    font-family: "Asta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.5vw;
+    color: var(--global-dark)
+}
+
+a {
+    font-family: "Asta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.5vw;
+    text-decoration: underline;
+    color: var(--global-blue);
+}
+
+/* Animations */
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    display: inherit;
+    text-align: inherit;
+    align-items: inherit;
+    flex-direction: inherit;
+    width: inherit;
+    height: inherit;
+}
+
+/* Title */
+#title_left {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 2vh;
+    padding-bottom: 12vh;
+    width: 100%;
+}
+
+#title_right {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-top: 12vh;
+    width: 100%;
+}
+
+/* About me section */
+#about-me {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1vw;
+    width: 100%;
+    min-height: 90%;
+    max-height: fit-content;
+    background: var(--global-dark);
+
+    p {
+        color: var(--global-cream)
+    }
+}
+
+#me-pictures {
+    display: flex;
+    flex-direction: row;
+    height: 30vw;
+    gap: 10px;
+    margin: 1rem 0;
+    height: fit-content;
+    
+    img {
+        height: 30vw;
+        border-color: var(--global-cream);
+    }
+}
+
+/* Coding Section */
+#coding {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+    max-height: fit-content;
+
+    img {
+        max-height: 70vh;
+        width: auto;
+        max-width: 40vw;
+        border-color: var(--global-orange);
+    }
+
+    h3 {
+        font-weight: 600;
+        font-size: 3vw;
+        color: var(--global-dark);
+        width: 50%;
+        padding: 1rem 0;
+    }
+
+    p {
+        width: 50%;
+        padding: .5rem 0;
+    }
+
+    #code-proj-left {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        text-align: start;
+        width: 100%;
+        padding: 0 2vw;
+        background: linear-gradient(to left, var(--global-orange) 50%, var(--global-cream) 50%);
+
+        h3 {
+            align-self: start;
+        }
+
+        p {
+            align-self: start;
+        }
+    }
+
+    #code-proj-right {
+        display: flex;
+        flex-direction: column;
+        text-align: end;
+        align-self: end;
+        width: 100%;
+        padding: 0 2vw;
+        background: linear-gradient(to right, var(--global-orange) 50%, var(--global-cream) 50%);
+
+        h3 {
+            align-self: end;
+        }
+
+        p {
+            align-self: end;
+        }
+    }
+}
+
+/* 3D model section */
+#models-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+    background: var(--global-dark);
+    min-height: 110%;
+    max-height: fit-content;
+    width: 100%;
+}
+
+iframe {
+    border-radius: 3rem;
+    border-width: .5rem;
+    margin: 1em;
+    border-color: var(--global-cream);
+    border-style: solid;
+}
+
+#behance-models {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#piano-model {
+    width: 60vw;
+    height: 40vw;
+}
+
+/* Education Section */
+#education-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 80%;
+    max-height: fit-content;
+    background: var(--global-cream);
+    text-align: center;
+
+    p {
+        padding: .5rem 0;
+        width: 50%;
+    }
+
+    img {
+        width: 60vw;
+        height: auto;
+    }
+}
+
+#cert-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 90%;
+    max-height: fit-content;
+    background: var(--global-dark);
+    text-align: center;
+
+    img {
+        width: 20rem;
+        height: auto;
+        border-radius: 0;
+        border-style: none;
+        padding: 3rem;
+        cursor:pointer;
+    }
+
+    #verizon-logo {
+        width: 40vw;
+    }
+
+    #linkedin-resume {
+        display: flex;
+        flex-direction: row;
+        align-items: end;    
+    }
+
+    p {
+        padding-bottom: 3rem;
+        color: var(--global-cream);
+    }
+}
+
+#contact {
+    display: flex;
+    background: var(--global-cream);
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    p {
+        color: var(--global-dark);
+        padding: 1rem;
+    }
+
+    a {
+        color: var(--global-dark-blue);
+    }
+}
+
+/* --------------------------------------------------------------------------- */
+
+/* Styles for screens up to 768px wide (e.g., tablets in portrait) */
+@media screen and (max-width: 768px) {
+    header {
+        min-height: 100%;
+        background: linear-gradient(to right, var(--global-orange) 50%, var(--global-cream) 50%);
+    }
+
+    /* Text sizes */
+    h1 {
+        font-size: 10vw;
+    }
+
+    h2 {
+        font-size: 12vw;
+    }
+
+    p{
+        font-size: 5vw;
+    }
+
+    a {
+        font-weight: 600;
+        font-size: 5vw;
+    }
+
+    /* Title Sections */
+    #title_left {
+        display: flex;
+        padding-bottom: 6vh;
+    }
+
+    #title_right {
+        display: flex;
+        padding-top: 6vh;
+    }
+
+    #me-pictures {
+        flex-direction: column;
+        gap: 3rem;
+
+        img {
+            height: 90vw;
+        }
+    }
+
+    /* Coding Section */
+    #coding {
+        img {
+            max-height: 70vh;
+            width: auto;
+            max-width: 80vw;
+        }
+
+        #code-proj-left {
+            background: var(--global-orange);
+
+            h3 {
+                font-size: 9vw;
+                width: 100%;
+            }
+
+            p {
+                width: 100%;
+            }
+
+            a {
+                color: var(--global-blue);
+            }
+        }
+
+        #code-proj-right {
+            background: var(--global-cream);
+
+            h3 {
+                font-size: 9vw;
+                width: 100%;
+            }
+
+            p {
+                width: 100%;
+            }
+
+            a {
+                color: var(--global-dark-blue);
+            }
+        }
+    }
+
+    #models-section {
+        flex-direction: column;
+    }
+
+    iframe {
+        width: 80vw;
+        height: 60vw;
+    }
+
+    #behance-models {
+        flex-direction: column;
+    }
+
+    #piano-model {
+        width: 80vw;
+        height: 60vw;
+    }
+
+    /* Education Section */
+    #education-section {
+        min-height: 70%;
+
+        p {
+            width: 90%;
+        }
+
+        img {
+            width: 90vw;
+        }
+    }
+
+    #cert-section {
+
+        img {
+            width: 50vw;
+            padding: 2rem;
+        }
+
+        #verizon-logo {
+            width: 90vw;
+        }
+
+        #linkedin-resume {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        p {
+            padding-bottom: 3rem;
+        }
+    }
+}
+
+/* Styles for screens up to 480px wide (e.g., mobile phones) */
+@media screen and (max-width: 480px) {
+
+}
+
+/* Styles for screens larger than 960px (e.g., large desktops) */
+@media screen and (min-width: 961px) {
+
+}

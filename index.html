@@ -1,303 +1,259 @@
-<!DOCTYPE HTML>
-<html>
+<html lang="en">
 
 <head>
-	<title>Jacob Berger's Website</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="icon" type="image/x-icon" href="assets/css/images/awesomeface.ico">
-	<link rel="stylesheet" href="assets/css/main.css" />
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berger's Web</title>
+    <link rel="icon" type="image/x-icon" href="image_assets/awesomeface.ico">
+    <link rel="stylesheet" href="index.css">
+    <script defer src="index.js"></script>
 
-<body class="homepage is-preload">
-	<div id="page-wrapper">
-		<!-- Header -->
-		<section id="header" class="wrapper">
-			<video autoplay muted loop id="headerVideo">
-				<source src="assets/css/images/cool neato background.mp4" type="video/mp4">
-				Your browser does not support the video tag.
-			</video>
+</html>
+    <body>
+        <!-- Title section -->
+        <header>
+            <div id="title_left" class="hidden">
+                <h1>
+                    Jacob
+                </h1>
+            </div>
+            <div id="title_right" class="hidden">
+                <h1>
+                    Berger
+                </h1>
+            </div>
+        </header>
 
-			<!-- Name -->
-			<div id="logo">
-				<h1>Jacob Berger</h1>
-			</div>
+        <!-- About me section -->
+        <div id="about-me">
+                <h2>
+                    About me
+                </h2>
+                <p>
+                    I enjoy being swag from time to time
+                </p>
+                <p>
+                    (top 50 loki in the us btw)
+                </p>
+                <div id="me-pictures">
+                    <div class="hidden">
+                        <img src="image_assets/me-professional-photo.jpg"/>
+                    </div>
+                    <div class="hidden">
+                        <img src="image_assets/me-in-car.jpg"/>
+                    </div>
+                    <div class="hidden">
+                        <img src="image_assets/me-with-my-swag-on.jpg"/>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-		</section>
+        <div id="coding">
+            <!-- Motivational Interviewing -->
+            <div id="code-proj-left">
+                <div class="hidden">
+                    <h2>
+                        Coding
+                    </h2>
+                    <h3>Motivational Interviewing AI Chatbot</h3>
+                    <a href="michat/index.html">
+                        <img src="image_assets/Chatbot Screenshot.png" alt="Motivational Interviewing Chatbot Homescreen"/>
+                    </a>
 
-		<!-- Main -->
-		<section id="main" class="wrapper style1">
-			<div class="title">Learn about me</div>
-			<!-- <div class="container">
-				<header class="style1">
-					<ul class="actions">
-						<li><a href="valentines/index.html" target="_blank" class="button style1">
-								I wonder what this does?</a>
-						</li>
-					</ul>
-				</header>
-			</div> -->
-		</section>
+                    <h3>Description</h3>
+                    <p>• Chat with an artificial nurse practitioner to demonstrate</p>
+                    <p>• the differences between a regular visit vs a visit using motivational interviewing</p>
+                    <p>• Utilizes Google's Gemini API for AI chat responses</p>
+                    <p>• 
+                        <a href="michat/index.html">
+                            Website
+                        </a>
+                    </p>
+                </div>
+            </div>
 
-		<!-- student -->
-		<section id="highlights" class="wrapper style2">
-			<div class="title">I Learn</div>
-			<div class="container">
-				<section id="features">
-					<header class="style1">
+            <!-- Board Game Tracker -->
+            <div id="code-proj-right">
+                <div class="hidden">
+                    <h3>Board Game Tracker</h3>
+                    <a href="https://github.com/rscheuermann1/Board-Game-Tracker/">
+                        <img src="image_assets/Playbook.jpg" alt="Board Game Tracking Logo"/>
+                    </a>
 
-						<!-- description and photo -->
-						<p>I'm a Junior at Maryville University getting a degree in computer science</p>
-						<p>With a specific track on AI and Data Science. I've followed along with</p>
-						<p>fellowships, completed online certifications, and completed personal</p>
-						<p>projects to learn as much as possible in my field.</p>
-						<a class="image featured">
-							<img src="assets/css/images/maryville M.jpg" alt="" />
-						</a>
-						<p>(Even though I'm not in this specific photo I swear I go here)</p>
-					</header>
-				</section>
-			</div>
-		</section>
+                    <h3>Description •</h3>
+                    <p>Stores user entries, ratings, descriptions, etc of entries of board game experiences •</p>
+                    <p>Uses Python Flask, CSS, and HTML •</p>
+                    <p>Uses locally stored SQL tables to store per user data •</p>
+                    <p>
+                        <a href="https://github.com/rscheuermann1/Board-Game-Tracker/">
+                            Github Repo
+                        </a> •
+                    </p>
+                </div>
+            </div>
 
-		<!-- coder -->
-		<section id="highlights" class="wrapper style1">
-			<div class="title">I Code</div>
-			<div class="container">
-				<header class="style1">
-					<!-- Languages -->
-					<p>Front End: HTML and CSS</p>
-					<p>Back End: Python, C++ and JavaScript</p>
-					<p>Database: SQL and R</p>
-					<a href="https://github.com/BergerMU" target="_blank" class="button style1">My Github</a>
-				</header>
-			</div>
-		</section>
+            <!-- Maze Generator -->
+            <div id="code-proj-left">
+                <div class="hidden">
+                    <h3>Maze Image Generator/Solver</h3>
+                    <a href="https://github.com/BergerMU/Maze-Generator-Solver/">
+                        <img src="image_assets/Unsolved_Maze.png" alt="Generated Maze Image"/>
+                    </a>
 
-		<!-- Highlighted Projects -->
-		<section id="highlights" class="wrapper style2">
-			<div class="title">Highlighted Projects</div>
-			<header class="style1">
-				<section id="highlights">
-					<div class="container">
-						<div class="row aln-center">
+                    <h3>Description</h3>
+                    <p>• Written in C++ using terminal-based prompts</p>
+                    <p>• Generate any odd sized maze</p>
+                    <p>• Multiple solving algorithms</p>
+                    <p>• Save solved and unsolved mazes to a png file</p>
+                    <p> •
+                        <a href="https://github.com/BergerMU/Maze-Generator-Solver/">
+                            Github Repo
+                        </a>
+                    </p>
+                </div>
+            </div>
 
-							<!-- Digital Pantry -->
-							<div class="col-6 col-12-medium">
-								<h2><u>Digital AI Pantry</u></h2>
-								<p>(Headstarter Project)</p>
-								<a href="https://pantry-ai-jacobs-projects-c951c5ee.vercel.app/" target="_blank"
-									class="image featured"><img src="assets/css/images/PantryAI.png" alt="" /></a>
+            <!-- Pantry AI -->
+            <div id="code-proj-right">
+                <div class="hidden">
+                    <h3>Digital AI Pantry</h3>
+                    <a href="https://pantry-ai-jacobs-projects-c951c5ee.vercel.app/">
+                        <img src="image_assets/PantryAi.png" alt="Digital Pantry Screenshot"/>
+                    </a>
 
-								<h2><b>Description</b></h2>
-								<p>• Uses React and Material UI</p>
-								<p>• Utilizes Googles Firebase for the database</p>
-								<p>• Incorporates Googles Gemini AI API for the recipe generation</p>
+                    <h3>Description</h3>
+                    <p>Uses React and Material UI •</p>
+                    <p>Utilizes Googles Firebase for the database •</p>
+                    <p>Incorporates Googles Gemini AI API for the recipe generation •</p>
+                    <p>
+                        <a href="https://pantry-ai-jacobs-projects-c951c5ee.vercel.app/">
+                            Website
+                        </a> •
+                    </p>
+                </div>
+            </div>
+        </div>
 
-								<ul class="actions">
-									<li><a href="https://pantry-ai-jacobs-projects-c951c5ee.vercel.app/" target="_blank"
-											class="button style1">Vercel Deployment</a></li>
-								</ul>
-							</div>
+        <!-- 3D Models -->
+        <div id="models-section">
+            <h2>
+                3D Models
+            </h2>
+            <!-- <div class="hidden"> -->
+                <div>
+                    <iframe src="https://sketchfab.com/models/e2845899471d459da64b3c8f086273e8/embed?autospin=1&autostart=0&camera=0&annotations_visible=0&preload=1&ui_theme=dark&dnt=1"
+                        title="Baby Grand Piano" frameborder="0"
+                        allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+                        allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                        execution-while-out-of-viewport execution-while-not-rendered web-share
+                        id="piano-model">
+                    </iframe>
+                <!-- </div> -->
+            </div>
+                
+            <div id="behance-models">
+                <!-- <div class="hidden"> -->
+                    <iframe src="https://www.behance.net/embed/project/177142805?ilo0=1"
+                        height="316"
+                        width="404"
+                        allowfullscreen
+                        lazyload
+                        frameborder="0"
+                        allow="clipboard-write"
+                        refererPolicy="strict-origin-when-cross-origin"
+                        scrolling="no">
+                    </iframe>
+                <!-- </div> -->
 
+                <!-- <div class="hidden"> -->
+                    <iframe src="https://www.behance.net/embed/project/176102079?ilo0=1"
+                        height="316"
+                        width="404"
+                        allowfullscreen
+                        lazyload
+                        frameborder="0"
+                        allow="clipboard-write"
+                        refererPolicy="strict-origin-when-cross-origin"
+                        scrolling="no">
+                    </iframe>
+                <!-- </div> -->
 
-							<!-- Motivational Interviewing Chatbot -->
-							<div class="col-6 col-12-medium">
-								<h2><u>Motivational Interviewing AI Chatbot</u></h2>
-								<p>Google Gemini Project</p>
-								<a href="michat/index.html" target="_blank" class="image featured"><img
-										src="assets/css/images/Chatbot Screenshot.png" alt="" /></a>
+                <!-- <div class="hidden"> -->
+                    <iframe src="https://www.behance.net/embed/project/152439007?ilo0=1"
+                        height="316"
+                        width="404"
+                        allowfullscreen
+                        lazyload
+                        frameborder="0"
+                        allow="clipboard-write"
+                        refererPolicy="strict-origin-when-cross-origin"
+                        scrolling="no">
+                    </iframe>
+                <!-- </div> -->
+            </div>
+        </div>
 
-								<h2><b>Description</b></h2>
-								<p>• Chat with an artificial nurse practitioner to demonstrate</p>
-								<p>the differences between a regular visit vs a visit using motivational interviewing
-								</p>
-								<p>• Utilizes Google's Gemini API for AI chat responses</p>
-								<br>
+        <!-- Education or somethin -->
+        <div id="education-section">
+            <div class="hidden">
+                <h2>
+                    Education
+                </h2>
+                <img src="image_assets/maryville M.jpg" alt="Maryville University M Photo"/>
+                <p>
+                    I'm a seinor at Maryville University working on a degree in Computer Science with a specialization in AI and Data Science.
+                </p>
+                <p>
+                    (I'm not in this specific photo but I swear I go here).
+                </p>
+            </div>
+        </div>
 
-								<ul class="actions">
-									<li><a href="michat/index.html" target="_blank" class="button style1">
-										Link</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</section>
+        <!-- Certifications -->
+        <div id="cert-section">
+            <div class="hidden">
+                <h2>
+                    Certifications
+                </h2>
 
-				<section id="highlights">
-					<div class="container">
-						<div class="row aln-center">
+                <!-- Verizon -->
+                <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Verizon%20Communications%20Inc./aNJGnRtgfiK5fQqcR_Verizon_uSZH3vb42kQzf8m68_1728492408455_completion_certificate.pdf">
+                    <img src="image_assets/Verizon_2024.png" alt="Verizon Logo" id="verizon-logo">
+                    <p>Verizon Cloud Platform Job Simulation</p>
+                </a>
 
-							<!-- Maze Generator -->
-							<div class="col-6 col-12-medium">
-								<h2><u>Maze Image Generator/Solver</u></h2>
-								<a href="https://github.com/BergerMU/Maze-Generator-Solver" target="_blank"
-									class="image featured"><img src="assets/css/images/Unsolved_Maze.png" alt="" /></a>
+                <!-- Linkedin -->
+                <div id="linkedin-resume">
+                    <div>
+                        <a href="https://www.linkedin.com/learning/certificates/6c3dffa60ad012b0cebec9c7c2b66412398b159dc24e524f92ccbe25990acedf?accountId=68462050&u=68462050&success=true&authUUID=EBMBVkHtS3qhHn2T6Le9GA%3D%3D">
+                            <img src="image_assets/Linkedin.png" alt="Linkedin Logo">
+                            <p>Career Essentials in Generative AI by Microsoft and LinkedIn</p>
+                        </a>
+                    </div>
 
-								<h2><b>Description</b></h2>
-								<p>• Written in C++ using terminal-based prompts</p>
-								<p>• Generate any odd sized maze</p>
-								<p>• Multiple solving algorithms</p>
-								<p>• Save solved and unsolved mazes to a png file</p>
-
-								<ul class="actions">
-									<a href="https://github.com/BergerMU/Maze-Generator-Solver" target="_blank"
-										class="button style1">Github
-										Repo</a>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</section>
-			</header>
-		</section>
-
-		<!-- 3D models -->
-		<section id="highlights" class="wrapper style1">
-			<div class="title">I 3D Model</div>
-			<div class="container">
-				<header class="style1" style="text-align: center;">
-
-					<!-- Sketchfab 3D models -->
-					<div class="sketchfab-container">
-						<iframe title="Baby Grand Piano" allow="autoplay; fullscreen; xr-spatial-tracking"
-							allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
-							execution-while-out-of-viewport execution-while-not-rendered web-share
-							src="https://sketchfab.com/models/e2845899471d459da64b3c8f086273e8/embed?&camera=0autospin=1&annotations_visible=1&preload=1&ui_hint=0"></iframe>
-
-					</div>
-
-					<div class="sketchfab-container">
-						<iframe title="Hello Kitty and Friends" allowfullscreen mozallowfullscreen="true"
-							webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking"
-							xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share
-							src="https://sketchfab.com/models/4de80f55a50641599cfd093918a78cce/embed?camera=0&annotations_visible=1&preload=1&ui_hint=0"></iframe>
-					</div>
-
-					<!-- Behance Models -->
-					<div class="row aln-center">
-						<iframe src="https://www.behance.net/embed/project/152439007?ilo0=1" height="416" width="434"
-							allowfullscreen lazyload frameborder="0" allow="clipboard-write"
-							refererPolicy="strict-origin-when-cross-origin"></iframe>
-
-						<iframe src="https://www.behance.net/embed/project/176102079?ilo0=1" height="416" width="434"
-							allowfullscreen lazyload frameborder="0" allow="clipboard-write"
-							refererPolicy="strict-origin-when-cross-origin"></iframe>
-
-						<iframe src="https://www.behance.net/embed/project/176101207?ilo0=1" height="416" width="434"
-							allowfullscreen lazyload frameborder="0" allow="clipboard-write"
-							refererPolicy="strict-origin-when-cross-origin"></iframe>
-					</div>
-
-					<!-- Behance Button Link -->
-					<ul class="actions">
-						<li><a href="https://www.behance.net/jacobberger23" target="_blank" class="button style1">Learn
-								more</a>
-						</li>
-					</ul>
-				</header>
-			</div>
-		</section>
-
-		<!-- Certifications and Resume -->
-		<section id="highlights" class="wrapper style2">
-			<div class="title">Certifications and Resume</div>
-			<div class="container">
-				<section id="highlights">
-					<div class="container">
-						<div class="row aln-center">
-
-							<!-- Certificate -->
-							<div class="col-4 col-12-medium">
-								<section class="highlight">
-									<a href="https://www.linkedin.com/learning/certificates/6c3dffa60ad012b0cebec9c7c2b66412398b159dc24e524f92ccbe25990acedf?u=68462050"
-										target="_blank" class="image featured"><img src="assets/css/images/Linkedin.png"
-											alt="" /></a>
-									<h2><a>Career Essentials in Generative AI</a></h2>
-									<ul class="actions">
-										<li><a href="https://www.linkedin.com/learning/certificates/6c3dffa60ad012b0cebec9c7c2b66412398b159dc24e524f92ccbe25990acedf?u=68462050"
-												target="_blank" class="button style1">Learn More</a></li>
-									</ul>
-								</section>
-							</div>
-
-							<!-- Resume -->
-							<div class="col-4 col-12-medium">
-								<section class="highlight">
-									<a href="https://drive.google.com/drive/folders/1Tga9OExEe29Cnpwc1lNr0sZrbQtdVY1W?usp=sharing"
-										target="_blank" class="image featured"><img
-											src="assets/css/images/google drive.png" alt="" /></a>
-									<h2><a>Resume</a></h2>
-									<ul class="actions">
-										<li><a href="https://drive.google.com/drive/folders/1Tga9OExEe29Cnpwc1lNr0sZrbQtdVY1W?usp=sharing"
-												target="_blank" class="button style1">Learn More</a></li>
-									</ul>
-								</section>
-							</div>
-
-							<!-- Verison -->
-							<div class="col-6 col-12-medium">
-								<section class="highlight">
-									<a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Verizon%20Communications%20Inc./aNJGnRtgfiK5fQqcR_Verizon_uSZH3vb42kQzf8m68_1728492408455_completion_certificate.pdf"
-										target="_blank" class="image featured"><img
-											src="assets/css/images/Verizon_2024.png" alt="" /></a>
-									<h2><a>Verizon Cloud Platform Job Simulation</a></h2>
-									<ul class="actions">
-										<li><a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Verizon%20Communications%20Inc./aNJGnRtgfiK5fQqcR_Verizon_uSZH3vb42kQzf8m68_1728492408455_completion_certificate.pdf"
-												target="_blank" class="button style1">Learn More</a></li>
-									</ul>
-								</section>
-							</div>
-						</div>
-					</div>
-				</section>
-			</div>
-		</section>
-	</div>
-
-	<!-- Footer -->
-	<section id="footer" class="wrapper">
-		<div class="row">
-			<section class="feature-list small">
-				<div class="row">
-
-					<!-- Links -->
-					<div class="col-6 col-12-small">
-						<section>
-							<h3 class="icon solid fa-comment">Socials</h3>
-							<p>
-								<a href="https://www.linkedin.com/in/jacob-berger-342390308/">Linkedin</a><br />
-								<a href="https://maryville.joinhandshake.com/profiles/53597056">Handshake</a><br />
-								<a href="https://www.instagram.com/jacob_berger_23">Instagram</a><br />
-								<a href="https://sketchfab.com/JacobBerger">Sketchfab</a><br />
-								<a href="https://www.behance.net/jacobberger23">Behance</a><br />
-							</p>
-						</section>
-					</div>
-
-					<!-- Email -->
-					<div class="col-6 col-12-small">
-						<section>
-							<h3 class="icon solid fa-envelope">Email</h3>
-							<h2>
-								jacobberger1234@gmail.com
-							</h2>
-						</section>
-					</div>
-				</div>
-			</section>
-		</div>
-	</section>
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.dropotron.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-
-</body>
-
+                    <!-- Google Drive -->
+                    <div>
+                        <a href="https://drive.google.com/drive/u/1/folders/1Tga9OExEe29Cnpwc1lNr0sZrbQtdVY1W">
+                            <img src="image_assets/google drive.png" alt="Google Drive Resume Link">
+                            <p>Resume Google Drive</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contact">
+            <div class="hidden">
+                <p>
+                    Contact me<br />
+                    Jacobberger1234@gmail.com
+                </p>
+                <a href="https://www.linkedin.com/in/jacob-berger-342390308/">Linkedin</a><br />
+                <a href="https://maryville.joinhandshake.com/profiles/53597056">Handshake</a><br />
+                <a href="https://www.instagram.com/jacob_berger_23">Instagram</a><br />
+                <a href="https://sketchfab.com/JacobBerger">Sketchfab</a><br />
+                <a href="https://www.behance.net/jacobberger23">Behance</a><br />
+            </div>
+        </div>
+    </body>
 </html>
