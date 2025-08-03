@@ -389,6 +389,10 @@ iframe {
             a {
                 color: var(--global-blue);
             }
+
+            img {
+                border-color: var(--global-blue);
+            }
         }
 
         #code-proj-right {
