@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const textElement = incomingMessageDiv.querySelector(".text");
         try {
             // Gets Vercel API key
-            const apiKeyResponse = await fetch('/config');
+            const apiKeyResponse = await fetch('config.js');
             const apiKeyData = await apiKeyResponse.json();
             const api_key = apiKeyData.key;
 
