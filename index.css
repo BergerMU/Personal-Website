@@ -96,8 +96,6 @@ a {
     text-align: inherit;
     align-items: inherit;
     flex-direction: inherit;
-    width: inherit;
-    height: inherit;
 }
 
 /* Title */
@@ -130,7 +128,9 @@ a {
     background: var(--global-dark);
 
     p {
-        color: var(--global-cream)
+        color: var(--global-cream);
+        width: 70vw;
+        text-align: center;
     }
 }
 
@@ -198,7 +198,7 @@ a {
         display: flex;
         flex-direction: column;
         text-align: end;
-        align-self: end;
+        align-items: end;
         width: 100%;
         padding: 0 2vw;
         background: linear-gradient(to right, var(--global-orange) 50%, var(--global-cream) 50%);
@@ -293,12 +293,21 @@ iframe {
     #linkedin-resume {
         display: flex;
         flex-direction: row;
-        align-items: end;    
+        align-items: end;
+        text-align: center;
+        justify-content: center;
+    }
+
+    a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     p {
         padding-bottom: 3rem;
         color: var(--global-cream);
+        width: 50%;
     }
 }
 
