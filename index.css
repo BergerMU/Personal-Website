@@ -302,12 +302,13 @@ iframe {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: min-content;
     }
 
     p {
         padding-bottom: 3rem;
         color: var(--global-cream);
-        width: 50%;
+        width: 100%;
     }
 }
 
