@@ -54,6 +54,13 @@ h1 {
     font-variation-settings: "HEXP" 25;
     color: var(--global-dark);
     font-size: 7vw;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+h1:hover {
+    font-size: 9vw;
+    transition: 0.5s;
 }
 
 h2 {
@@ -84,6 +91,15 @@ a {
     color: var(--global-blue);
 }
 
+button {
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    border-width: 0;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    background-color: var(--global-blue);
+}
+
 /* Animations */
 .hidden {
     opacity: 0;
@@ -103,7 +119,7 @@ a {
     display: flex;
     justify-content: end;
     align-items: center;
-    padding-right: 2vh;
+    /* padding-right: 2vh; */
     padding-bottom: 12vh;
     width: 100%;
 }
@@ -341,6 +357,11 @@ iframe {
     /* Text sizes */
     h1 {
         font-size: 10vw;
+    }
+
+    h1:hover {
+        font-size: 11vw;
+        transition: 0.5s;
     }
 
     h2 {
