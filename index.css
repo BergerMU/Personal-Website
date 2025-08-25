@@ -119,8 +119,7 @@ button {
     display: flex;
     justify-content: end;
     align-items: center;
-    /* padding-right: 2vh; */
-    padding-bottom: 12vh;
+    padding-right: 2vh;
     width: 100%;
 }
 
