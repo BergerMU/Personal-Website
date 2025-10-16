@@ -70,6 +70,13 @@ h2 {
     font-size: 5vw;
     color: var(--global-blue);
     padding: 1rem 0rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+h2:hover {
+    font-size: 6vw;
+    transition: 0.5s;
 }
 
 p {
@@ -184,6 +191,13 @@ button {
         color: var(--global-dark);
         width: 50%;
         padding: 1rem 0;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+
+    h3:hover {
+        font-size: 3.5vw;
+        transition: 0.5s;
     }
 
     p {
@@ -365,6 +379,11 @@ iframe {
 
     h2 {
         font-size: 12vw;
+    }
+
+    h2:hover {
+        font-size: 13vw;
+        transition: 0.5s;
     }
 
     p{
