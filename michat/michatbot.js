@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Gets Vercel API key
             const apiKeyResponse = await fetch('/api/config');
             const apiKeyData = await apiKeyResponse.json();
-            const api_key = "apiKeyData.key";
+            const api_key = apiKeyData.key;
 
             const modelType = "gemma-4-26b-a4b-it";
 
