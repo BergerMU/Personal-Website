@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+    <link rel="icon" type="image/x-icon" href="../image_assets/awesomeface.ico">
+    <link rel="stylesheet" href="index.css">
+    <script defer src="index.js"></script>
+
+</html>
+
+<body>
+    <h1>Test Page</h1>
+    <p>testing distance based styling</p>
+    <a href="index 2.html">
+        <p>previous Page</p>
+    </a>
+    <a href="index 4.html">
+        <p>Next Page</p>
+    </a>
+    <script type="module">
+        import { playhtml } from "https://unpkg.com/playhtml@latest";
+
+        playhtml.init({
+            cursors: {
+                enabled: true,
+                getCursorStyle: (presence) => {
+                    if (!presence.cursor) return {};
+
+                    const distance = Math.sqrt(
+                        Math.pow(presence.cursor.x - myX, 2) +
+                        Math.pow(presence.cursor.y - myY, 2)
+                    );
+
+                    if (distance > 500) {
+                        return { opacity: '0.3' };
+                    }
+                    return {};
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

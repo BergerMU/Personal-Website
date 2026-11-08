@@ -11,13 +11,21 @@
 </html>
 
 <body>
-    <h1>Test Page</h1>
+    <h1>Test Page 1</h1>
+    <p>testing shouldRenderCursor</p>
+    <a href="index 2.html">
+        <p>Next Page</p>
+    </a>
     <script type="module">
         import { playhtml } from "https://unpkg.com/playhtml@latest";
 
         playhtml.init({
             cursors: {
                 enabled: true,
+                shouldRenderCursor: (presence) => {
+                    // Only render cursors from the same page
+                    return presence.page === window.location.pathname;
+                }
             }
         });
     </script>

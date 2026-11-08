@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+    <link rel="icon" type="image/x-icon" href="../image_assets/awesomeface.ico">
+    <link rel="stylesheet" href="index.css">
+    <script defer src="index.js"></script>
+
+</html>
+
+<body>
+    <h1>Test Page</h1>
+    <p>testing blurring cursors
+    <p>
+        <a href="index 1.html">
+            <p>previous Page</p>
+        </a>
+        <a href="index 3.html">
+            <p>Next Page</p>
+        </a>
+        <script type="module">
+            import { playhtml } from "https://unpkg.com/playhtml@latest";
+
+            playhtml.init({
+                cursors: {
+                    enabled: true,
+                    getCursorStyle: (presence) => {
+                        // Fade cursors from other pages
+                        if (presence.page !== window.location.pathname) {
+                            return {
+                                opacity: '0.4',
+                                filter: 'blur(3px)'
+                            };
+                        }
+                        return {};
+                    }
+                }
+            })
+        </script>
+</body>
+
+</html>

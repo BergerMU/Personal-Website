@@ -1,0 +1,62 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+    <link rel="icon" type="image/x-icon" href="../image_assets/awesomeface.ico">
+    <link rel="stylesheet" href="index.css">
+    <script defer src="index.js"></script>
+
+</html>
+
+<body>
+    <h1>Test Page</h1>
+    <p>...</p>
+    <a href="index 3.html">
+        <p>previous Page</p>
+    </a>
+    <script type="module">
+        import { playhtml } from "https://unpkg.com/playhtml@latest";
+
+        playhtml.init({
+            cursors: {
+                enabled: true,
+
+                // Seed your identity (advanced; most sites set playhtml.people.me instead)
+                playerIdentity: {
+                    publicKey: "alice",
+                    name: "Alice",
+                    playerStyle: {
+                        colorPalette: ["#3b82f6", "#8b5cf6", "#ec4899"]
+                    }
+                },
+
+                // Proximity detection
+                proximityThreshold: 150,  // pixels
+                // The first argument (playerIdentity) is deprecated; use the fourth, `user`
+                onProximityEntered: (_identity, positions, angle, user) => {
+                    console.log("Someone nearby!", user.name);
+                },
+                onProximityLeft: (pid) => {
+                    console.log("Someone left proximity", pid);
+                },
+
+                // Visibility threshold (hide distant cursors)
+                visibilityThreshold: 1000,  // pixels
+
+                // Enable chat
+                enableChat: true,
+
+                // Coordinate space cursors are stored and broadcast in
+                coordinateMode: "relative",  // "relative" (default) or "absolute"
+
+                // CSS cursor applied to the page while cursors are active
+                cursorStyle: "none",
+
+            }
+        });
+    </script>
+</body>
+
+</html>
