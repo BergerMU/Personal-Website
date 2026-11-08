@@ -11,8 +11,8 @@
 </html>
 
 <body>
-    <h1>Test Page</h1>
-    <p>testing distance based styling</p>
+    <h1>Test Page 3</h1>
+    <p>testing domain user count</p>
     <a href="index 2.html">
         <p>previous Page</p>
     </a>
@@ -25,21 +25,16 @@
         playhtml.init({
             cursors: {
                 enabled: true,
-                getCursorStyle: (presence) => {
-                    if (!presence.cursor) return {};
-
-                    const distance = Math.sqrt(
-                        Math.pow(presence.cursor.x - myX, 2) +
-                        Math.pow(presence.cursor.y - myY, 2)
-                    );
-
-                    if (distance > 500) {
-                        return { opacity: '0.3' };
-                    }
-                    return {};
+                room: "domain",  // All pages share presence
+                shouldRenderCursor: (presence) => {
+                    // Only render same-page cursors
+                    return presence.page === window.location.pathname;
                 }
             }
         });
+
+        // Domain-wide count: everyone on any page of the site
+        const total = playhtml.people.everyone.length;
     </script>
 </body>
 

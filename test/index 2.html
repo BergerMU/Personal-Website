@@ -11,9 +11,8 @@
 </html>
 
 <body>
-    <h1>Test Page</h1>
-    <p>testing blurring cursors
-    <p>
+    <h1>Test Page 2</h1>
+    <p>Testing Chat on pages + absolute coordinate</p>
         <a href="index 1.html">
             <p>previous Page</p>
         </a>
@@ -26,18 +25,14 @@
             playhtml.init({
                 cursors: {
                     enabled: true,
-                    getCursorStyle: (presence) => {
-                        // Fade cursors from other pages
-                        if (presence.page !== window.location.pathname) {
-                            return {
-                                opacity: '0.4',
-                                filter: 'blur(3px)'
-                            };
-                        }
-                        return {};
-                    }
+                    shouldRenderCursor: (presence) => {
+                        // Only render cursors from the same page
+                        return presence.page === window.location.pathname;
+                    },
+                    enableChat: true,
+                    coodinateMode: "absolute"
                 }
-            })
+            });
         </script>
 </body>
 

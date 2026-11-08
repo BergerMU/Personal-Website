@@ -12,7 +12,7 @@
 
 <body>
     <h1>Test Page 1</h1>
-    <p>testing shouldRenderCursor</p>
+    <p>Testing Chat on pages + relative coordinate</p>
     <a href="index 2.html">
         <p>Next Page</p>
     </a>
@@ -25,7 +25,9 @@
                 shouldRenderCursor: (presence) => {
                     // Only render cursors from the same page
                     return presence.page === window.location.pathname;
-                }
+                },
+                enableChat: true,
+                coodinateMode: "relative"
             }
         });
     </script>
