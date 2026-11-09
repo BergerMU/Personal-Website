@@ -315,7 +315,7 @@ iframe {
     }
 }
 
-#cert-section {
+#certification-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -335,15 +335,21 @@ iframe {
     }
 
     #verizon-logo {
-        width: 40vw;
+        width: 20vw;
     }
 
-    #linkedin-resume {
-        display: flex;
+    #certifications {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         flex-direction: row;
-        align-items: end;
+        align-items: center;
         text-align: center;
         justify-content: center;
+
+        #certification-item {
+            align-items: center;
+            justify-items: center;
+        }
     }
 
     a {
@@ -512,7 +518,7 @@ iframe {
         }
     }
 
-    #cert-section {
+    #certification-section {
 
         img {
             width: 50vw;
@@ -523,7 +529,8 @@ iframe {
             width: 90vw;
         }
 
-        #linkedin-resume {
+        #certifications {
+            display: flex;
             flex-direction: column;
             align-items: center;
         }
@@ -536,7 +543,6 @@ iframe {
 
 /* Styles for screens up to 480px wide */
 @media screen and (max-width: 480px) {
-
 }
 
 /* Styles for screens larger than 960px */
