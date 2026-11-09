@@ -24,21 +24,41 @@
                 enabled: true,
                 shouldRenderCursor: (presence) => {
                     // Only render cursors from the same page
-                    // Each cursor is { x, y, pointer, zone, page }, or missing if that
-                    // person's pointer isn't on the page.
-                    for (const person of playhtml.people.everyone) {
-                        const { cursor } = person.presence;
-                        if (cursor) drawDot(cursor.x, cursor.y, person.color);
-                    }
-
-                    // Fires now, then on every cursor move
-                    const unsubscribe = playhtml.people.onChange("cursor", redrawMiniMap);
                     return presence.page === window.location.pathname;
                 },
                 enableChat: true,
-                coodinateMode: "relative"
+                coodinateMode: "absolute"
             }
         });
+
+        function drawDot(x, y, color) {
+            const dot = document.createElement("div");
+            Object.assign(dot.style, {
+                position: "absolute",
+                left: `${x}px`,
+                top: `${y}px`,
+                width: "8px",
+                height: "8px",
+                borderRadius: "50%",
+                backgroundColor: color,
+                opacity: "0.7",
+                pointerEvents: "none",
+                zIndex: "9999"
+            });
+
+            document.body.append(dot);
+            setTimeout(() => dot.remove(), 700);
+        }
+
+        function redrawMiniMap(everyone) {
+            for (const person of everyone) {
+                const { cursor } = person.presence;
+                if (cursor) drawDot(cursor.x, cursor.y, person.color);
+            }
+        }
+
+        // Register once, after initialization.
+        playhtml.people.onChange("cursor", redrawMiniMap);
     </script>
 </body>
 
