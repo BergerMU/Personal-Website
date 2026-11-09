@@ -12,28 +12,35 @@
 
 <body>
     <h1>Test Page 2</h1>
-    <p>Testing Chat on pages + absolute coordinate</p>
-        <a href="index 1.html">
-            <p>previous Page</p>
-        </a>
-        <a href="index 3.html">
-            <p>Next Page</p>
-        </a>
-        <script type="module">
-            import { playhtml } from "https://unpkg.com/playhtml@latest";
+    <p>Testing cursor paths 2</p>
+    <a href="index 1.html">
+        <p>previous Page</p>
+    </a>
+    <a href="index 3.html">
+        <p>Next Page</p>
+    </a>
+    <script type="module">
+        import { playhtml } from "https://unpkg.com/playhtml@latest";
 
-            playhtml.init({
-                cursors: {
-                    enabled: true,
-                    shouldRenderCursor: (presence) => {
-                        // Only render cursors from the same page
-                        return presence.page === window.location.pathname;
-                    },
-                    enableChat: true,
-                    coodinateMode: "absolute"
-                }
-            });
-        </script>
+        playhtml.init({
+            cursors: {
+                enabled: true,
+                shouldRenderCursor: (presence) => {
+                    // Each cursor is { x, y, pointer, zone, page }, or missing if that
+                    // person's pointer isn't on the page.
+                    for (const person of playhtml.people.everyone) {
+                        const { cursor } = person.presence;
+                        if (cursor) drawDot(cursor.x, cursor.y, person.color);
+                    }
+
+                    // Fires now, then on every cursor move
+                    const unsubscribe = playhtml.people.onChange("cursor", redrawMiniMap);
+                },
+                enableChat: true,
+                coodinateMode: "relative"
+            }
+        });
+    </script>
 </body>
 
 </html>

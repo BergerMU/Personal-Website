@@ -12,7 +12,7 @@
 
 <body>
     <h1>Test Page 1</h1>
-    <p>Testing Chat on pages + relative coordinate</p>
+    <p>Testing cursor paths 1</p>
     <a href="index 2.html">
         <p>Next Page</p>
     </a>
@@ -24,6 +24,15 @@
                 enabled: true,
                 shouldRenderCursor: (presence) => {
                     // Only render cursors from the same page
+                    // Each cursor is { x, y, pointer, zone, page }, or missing if that
+                    // person's pointer isn't on the page.
+                    for (const person of playhtml.people.everyone) {
+                        const { cursor } = person.presence;
+                        if (cursor) drawDot(cursor.x, cursor.y, person.color);
+                    }
+
+                    // Fires now, then on every cursor move
+                    const unsubscribe = playhtml.people.onChange("cursor", redrawMiniMap);
                     return presence.page === window.location.pathname;
                 },
                 enableChat: true,
