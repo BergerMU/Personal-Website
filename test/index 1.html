@@ -26,38 +26,56 @@
                     // Only render cursors from the same page
                     return presence.page === window.location.pathname;
                 },
-                enableChat: true,
-                coodinateMode: "absolute"
+                enableChat: true
             }
         });
 
         function drawDot(x, y, color) {
             const dot = document.createElement("div");
             Object.assign(dot.style, {
-                position: "absolute",
-                left: `${x}px`,
-                top: `${y}px`,
+                position: "fixed",
+                left: `${x}%`,
+                top: `${y}%`,
                 width: "8px",
                 height: "8px",
                 borderRadius: "50%",
+                transform: "translate(-50%, -50%)",
                 backgroundColor: color,
-                opacity: "0.7",
+                opacity: "0.8",
+                transition: "opacity 700ms linear",
                 pointerEvents: "none",
                 zIndex: "9999"
             });
 
             document.body.append(dot);
+            requestAnimationFrame(() => { dot.style.opacity = "0"; });
             setTimeout(() => dot.remove(), 700);
         }
+
+        const lastCursors = new Map();
 
         function redrawMiniMap(everyone) {
             for (const person of everyone) {
                 const { cursor } = person.presence;
-                if (cursor) drawDot(cursor.x, cursor.y, person.color);
+                if (!cursor) continue;
+
+                const previous = lastCursors.get(person.pid);
+                if (!previous || previous.x !== cursor.x || previous.y !== cursor.y) {
+                    drawDot(cursor.x, cursor.y, person.color);
+                    lastCursors.set(person.pid, { x: cursor.x, y: cursor.y });
+                }
             }
         }
 
-        // Register once, after initialization.
+        await playhtml.init({
+            cursors: {
+                enabled: true,
+                shouldRenderCursor: (presence) =>
+                    presence.page === window.location.pathname,
+                enableChat: true
+            }
+        });
+
         playhtml.people.onChange("cursor", redrawMiniMap);
     </script>
 </body>
