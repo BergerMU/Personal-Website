@@ -7,18 +7,49 @@
     <link rel="icon" type="image/x-icon" href="image_assets/awesomeface.ico">
     <link rel="stylesheet" href="index.css">
     <script defer src="index.js"></script>
+    <script type="module">
+        // Initialize User's Cursor
+        import { playhtml } from "https://unpkg.com/playhtml@latest";
+        await playhtml.init({
+            cursors: {
+                enabled: true,
+                shouldRenderCursor: (presence) => {
+                    // Only render cursors from the same page
+                    return presence.page === window.location.pathname;
+                }
+            }
+        });
+
+        // Randomize Cursor Color
+        const cursorColors = ["#4E1609", "#1C8752", "#D284BA", "#081D26", "#23806E", "#E55D69", "#3E1F09", "#8CADC5"];
+        playhtml.people.me.color = cursorColors[Math.floor(Math.random() * cursorColors.length)];
+
+        // Update Page User Count
+        const countElement = document.querySelector("#online-count");
+        function updateCount(everyone) {
+            const count = everyone.length;
+            countElement.textContent = `${count} ${count === 1 ? "person" : "people"} online`;
+        }
+
+        playhtml.people.onChange(updateCount);
+    </script>
 
 </html>
 
 <body>
+    <!-- Play.html Page Counter -->
+    <div id="user-counter">
+        <p id="online-count"></p>
+    </div>
+
     <!-- Title section -->
     <header>
-        <div id="title_left" class="hidden">
+        <div id="title-left" class="hidden">
             <h1>
                 Jacob
             </h1>
         </div>
-        <div id="title_right" class="hidden">
+        <div id="title-right" class="hidden">
             <h1>
                 Berger
             </h1>
@@ -39,9 +70,7 @@
                 <img src="image_assets/me-professional-photo.jpg" />
             </div>
             <div class="hidden">
-                <a href="./test/index 1.html">
-                    <img src="image_assets/me-in-car.jpg" />
-                </a>
+                <img src="image_assets/me-in-car.jpg" />
             </div>
             <div class="hidden">
                 <img src="image_assets/me-with-my-swag-on.jpg" />
@@ -63,9 +92,12 @@
                 </a>
 
                 <h3>Description</h3>
-                <p>See your Steam account in a whole new light by giving your games a score based on how much they are played</p>
-                <p>Explore the best (and worst) parts of your library with the different categories your games are divided into</p>
-                <p>Get help deciding which game to play by asking BMO for a random recomendation, for a challenge, or even the meaning of life</p>
+                <p>See your Steam account in a whole new light by giving your games a score based on how much they are
+                    played</p>
+                <p>Explore the best (and worst) parts of your library with the different categories your games are
+                    divided into</p>
+                <p>Get help deciding which game to play by asking BMO for a random recomendation, for a challenge, or
+                    even the meaning of life</p>
                 <p>Tech: Next.js, React, Typescript, Tailwind, and deployment on Vercel</p>
                 <a href="https://abandonedgames.vercel.app" target="_blank"><button>Link</button></a>
             </div>
@@ -91,7 +123,7 @@
         </div>
 
         <!-- Motivational Interviewing -->
-        <div id="code-proj-left">
+        <!-- <div id="code-proj-left">
             <div class="hidden">
                 <h3>Motivational Interviewing AI Chatbot</h3>
                 <a href="michat/index.html" target="_blank">
@@ -105,10 +137,10 @@
                 <p>Utilizes Google's Gemini API for AI chat responses</p>
                 <a href="michat/index.html" target="_blank"><button>Link</button></a>
             </div>
-        </div>
+        </div> -->
 
         <!-- Board Game Tracker -->
-        <div id="code-proj-right">
+        <div id="code-proj-left">
             <div class="hidden">
                 <h3>Board Game Tracker</h3>
                 <a href="https://github.com/rscheuermann1/Board-Game-Tracker/" target="_blank">
@@ -124,7 +156,7 @@
         </div>
 
         <!-- Maze Generator -->
-        <div id="code-proj-left">
+        <div id="code-proj-right">
             <div class="hidden">
                 <h3>Maze Image Generator and Solver</h3>
                 <a href="https://github.com/BergerMU/Maze-Generator-Solver/" target="_blank">

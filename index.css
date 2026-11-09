@@ -16,6 +16,23 @@
     --global-dark-blue: #154f69;
 }
 
+/* Play.html User Cursor + Counter */
+
+#user-counter {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background: var(--global-cream);
+    border: solid BLACK;
+    border-radius: 1rem;
+    padding: .5rem;
+    z-index: 1;
+
+    #online-count {
+        font-size: 3vw;
+    }
+}
+
 /* Big Sections */
 body {
     display: flex;
@@ -124,7 +141,7 @@ button {
 }
 
 /* Title */
-#title_left {
+#title-left {
     display: flex;
     justify-content: end;
     align-items: center;
@@ -132,7 +149,7 @@ button {
     width: 100%;
 }
 
-#title_right {
+#title-right {
     display: flex;
     justify-content: start;
     align-items: center;
@@ -363,7 +380,7 @@ iframe {
 
 /* --------------------------------------------------------------------------- */
 
-/* Styles for screens up to 768px wide (e.g., tablets in portrait) */
+/* Styles for screens up to 768px wide */
 @media screen and (max-width: 768px) {
     header {
         background: linear-gradient(to right, var(--global-orange) 50%, var(--global-cream) 50%);
@@ -398,12 +415,12 @@ iframe {
     }
 
     /* Title Sections */
-    #title_left {
+    #title-left {
         display: flex;
         padding-bottom: 6vh;
     }
 
-    #title_right {
+    #title-right {
         display: flex;
         padding-top: 6vh;
     }
@@ -517,12 +534,16 @@ iframe {
     }
 }
 
-/* Styles for screens up to 480px wide (e.g., mobile phones) */
+/* Styles for screens up to 480px wide */
 @media screen and (max-width: 480px) {
 
 }
 
-/* Styles for screens larger than 960px (e.g., large desktops) */
+/* Styles for screens larger than 960px */
 @media screen and (min-width: 961px) {
-
+    #user-counter {
+        #online-count {
+            font-size: 1vw;
+        }
+    }
 }
