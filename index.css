@@ -142,7 +142,7 @@
 
 /* Big Sections */
 html {
-    overflow-x: clip;
+    overflow-x: hidden;
 }
 
 body {
@@ -150,7 +150,7 @@ body {
     align-items: center;
     max-width: 100%;
     flex-direction: column;
-    overflow-x: clip;
+    overflow-x: hidden;
 }
 
 header {
