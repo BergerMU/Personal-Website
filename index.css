@@ -17,20 +17,115 @@
 }
 
 /* Play.html User Cursor + Counter */
+#chat_container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 
-#user-counter {
+    width: 300px;
+    max-height: 300px;
+    
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#chat_message_history {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+
+    p {
+        font-size: 0.75rem;
+        overflow-wrap: anywhere;
+    }
+}
+
+#chat_entry {
+    display: flex;
+    flex-direction: row;
+}
+
+#chat_messages, #chat_times {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#chat_messages {
+    flex: 1;
+    min-width: 0;
+}
+
+#chat_times {
+    flex-shrink: 0;
+    text-align: right;
+}
+
+#messages_input {
+    width: 100%;
+    min-width: 0;
+    padding: 0.5rem;
+}
+
+
+#social_container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    gap: 1rem;
+
     position: fixed;
     bottom: 1rem;
     right: 1rem;
+    z-index: 1;
+    width: fit-content;
+    max-width: min(90vw, 350px);
+    max-height: 80vh;
+
     background: var(--global-cream);
     border: solid BLACK;
     border-radius: 1rem;
     padding: .5rem;
-    z-index: 1;
 
-    #online-count {
+    #online_count {
         font-size: 3vw;
     }
+
+    #open_close_chat {
+        cursor: pointer;
+    }
+
+    button {
+        justify-content: center;
+        align-items: center;
+        max-height: 2.5rem;
+        max-width: 2.5rem;
+        font-weight: 400;
+        font-size: 1rem;
+        padding: 0.75rem 1rem;
+        border-radius: 1rem;
+        border-width: 0;
+        cursor: pointer;
+        background-color: var(--global-blue);
+    }
+}
+
+#user_counter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+#chat_container.chat_hidden {
+    display: none;
+}
+
+#chat_container.chat_show {
+    display: flex;
 }
 
 /* Big Sections */
@@ -117,11 +212,10 @@ a {
 
 button {
     font-weight: 600;
-    font-size: 1.1vw;
+    font-size: 1rem;
     padding: 0.75rem 1rem;
     border-radius: 1rem;
     border-width: 0;
-    margin-bottom: 0.5rem;
     cursor: pointer;
     background-color: var(--global-blue);
 }
@@ -182,7 +276,7 @@ button {
     gap: 10px;
     margin: 1rem 0;
     height: fit-content;
-    
+
     img {
         height: 30vw;
         border-color: var(--global-cream);
@@ -230,7 +324,7 @@ button {
         align-items: start;
         text-align: start;
         width: 100%;
-        padding: 0 2vw;
+        padding: 1vw 2vw;
         background: linear-gradient(to left, var(--global-orange) 50%, var(--global-cream) 50%);
 
         h3 {
@@ -331,7 +425,7 @@ iframe {
         border-radius: 0;
         border-style: none;
         padding: 3rem;
-        cursor:pointer;
+        cursor: pointer;
     }
 
     #verizon-logo {
@@ -388,6 +482,13 @@ iframe {
 
 /* Styles for screens up to 768px wide */
 @media screen and (max-width: 768px) {
+    #social_container {
+        max-width:fit-content;
+        bottom: .1rem;
+        right: .1rem;
+        padding: .5rem;
+    }
+
     header {
         background: linear-gradient(to right, var(--global-orange) 50%, var(--global-cream) 50%);
     }
@@ -411,7 +512,7 @@ iframe {
         transition: 0.5s;
     }
 
-    p{
+    p {
         font-size: 5vw;
     }
 
@@ -542,13 +643,12 @@ iframe {
 }
 
 /* Styles for screens up to 480px wide */
-@media screen and (max-width: 480px) {
-}
+@media screen and (max-width: 480px) {}
 
 /* Styles for screens larger than 960px */
 @media screen and (min-width: 961px) {
-    #user-counter {
-        #online-count {
+    #social_container {
+        #online_count {
             font-size: 1vw;
         }
     }

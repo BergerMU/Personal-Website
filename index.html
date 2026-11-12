@@ -25,7 +25,7 @@
         playhtml.people.me.color = cursorColors[Math.floor(Math.random() * cursorColors.length)];
 
         // Update Page User Count
-        const countElement = document.querySelector("#online-count");
+        const countElement = document.querySelector("#online_count");
         function updateCount(everyone) {
             const count = everyone.length;
             countElement.textContent = `${count} ${count === 1 ? "person" : "people"} online`;
@@ -38,9 +38,78 @@
 
 <body>
     <!-- Play.html Page Counter -->
-    <div id="user-counter">
-        <p id="online-count"></p>
+    <div id="social_container">
+        <div id="chat_container" class="chat_hidden">
+            <div id="chat_message_history" can-mirror></div>
+
+            <input type="text" value="" placeholder="Say hi!" name="message_input" id="message_input" />
+            <button id="message_send">></button>
+        </div>
+
+        <div id="user_counter">
+            <button id="open_close_chat">^</button>
+            <p id="online_count"></p>
+        </div>
     </div>
+
+    <script type="module">
+        // Send Message Function + Event Listener
+        function SendChatMessage() {
+            // Get Valid Input
+            const message_input_element = document.getElementById("message_input");
+            if (!message_input_element.value) return;
+
+            // Truncate Chat History Over 20 Messages
+            if (document.querySelectorAll("#chat_entry").length >= 20) {
+                const entries = document.querySelectorAll("#chat_entry");
+                entries.item(0).remove();
+            }
+
+            // Create Parent Chat Entry Element
+            const chat_entry_element = document.createElement("div");
+            chat_entry_element.id = "chat_entry";
+
+            // Create Child Chat Message + Time Elements
+            const chat_messages_element = document.createElement("div");
+            chat_messages_element.id = "chat_messages";
+            const chat_times_element = document.createElement("div");
+            chat_times_element.id = "chat_times";
+
+            // Create Child-Child Message + Time Elements
+            const message = document.createElement("p");
+            message.textContent = message_input_element.value;
+            chat_messages_element.append(message);
+
+            const time = document.createElement("p");
+            time.textContent = new Date().toLocaleTimeString();
+            chat_times_element.append(time);
+
+            // Add Parent Chat Entry Element To Page + Clear Input
+            chat_entry_element.append(chat_messages_element, chat_times_element);
+            document.getElementById("chat_message_history").append(chat_entry_element);
+            message_input_element.value = "";
+        };
+
+        document.getElementById("message_send").addEventListener("click", () => {
+            SendChatMessage();
+        })
+
+        // Open/Close Chat Function + Event Listener
+        function OpenCloseChat() {
+            if (document.getElementById("chat_container").className == 'chat_hidden') {
+                document.getElementById("chat_container").className = 'chat_show';
+                document.getElementById("open_close_chat").textContent = "V";
+            } else {
+                document.getElementById("chat_container").className = 'chat_hidden';
+                document.getElementById("open_close_chat").textContent = "^";
+            };
+        };
+
+        // Expand/Close chat
+        document.getElementById("open_close_chat").addEventListener("click", () => {
+            OpenCloseChat();
+        });
+    </script>
 
     <!-- Title section -->
     <header>
@@ -235,14 +304,14 @@
         </h2>
 
         <div id="certifications">
-        <!-- Verizon -->
-        <div id="certification-item" class="hidden">
-            <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Verizon%20Communications%20Inc./aNJGnRtgfiK5fQqcR_Verizon_uSZH3vb42kQzf8m68_1728492408455_completion_certificate.pdf"
-                target="_blank">
-                <img src="image_assets/Verizon_2024.png" alt="Verizon Logo" id="verizon-logo">
-                <p>Verizon Cloud Platform Job Simulation</p>
-            </a>
-        </div>
+            <!-- Verizon -->
+            <div id="certification-item" class="hidden">
+                <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Verizon%20Communications%20Inc./aNJGnRtgfiK5fQqcR_Verizon_uSZH3vb42kQzf8m68_1728492408455_completion_certificate.pdf"
+                    target="_blank">
+                    <img src="image_assets/Verizon_2024.png" alt="Verizon Logo" id="verizon-logo">
+                    <p>Verizon Cloud Platform Job Simulation</p>
+                </a>
+            </div>
 
 
             <!-- Linkedin -->
@@ -257,7 +326,8 @@
             <!-- Google The Bits and Bytes of Computer Networking -->
             <div id="certification-item" class="hidden">
                 <a href="https://www.coursera.org/account/accomplishments/verify/PQNYT0RRMU7U" target="_blank">
-                    <img src="image_assets/Google__G__logo.svg.webp" alt="Google Bits and Bytes of Computer Networking Certification">
+                    <img src="image_assets/Google__G__logo.svg.webp"
+                        alt="Google Bits and Bytes of Computer Networking Certification">
                     <p>The Bits and Bytes of Computer Networking</p>
                 </a>
             </div>
@@ -265,7 +335,8 @@
             <!-- Google Operating Systems and You: Becoming a Power User -->
             <div id="certification-item" class="hidden">
                 <a href="https://www.coursera.org/account/accomplishments/verify/9MGM9I9B3L63" target="_blank">
-                    <img src="image_assets/Google__G__logo.svg.webp" alt="Google Operating Systems and You: Becoming a Power User">
+                    <img src="image_assets/Google__G__logo.svg.webp"
+                        alt="Google Operating Systems and You: Becoming a Power User">
                     <p>Operating Systems and You: Becoming a Power User</p>
                 </a>
             </div>
