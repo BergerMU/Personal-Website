@@ -16,7 +16,10 @@
                 shouldRenderCursor: (presence) => {
                     // Only render cursors from the same page
                     return presence.page === window.location.pathname;
-                }
+                },
+
+                coordinateMode: "relative",
+                enableChat: true
             }
         });
 
@@ -42,8 +45,10 @@
         <div id="chat_container" class="chat_hidden">
             <div id="chat_message_history" can-mirror></div>
 
-            <input type="text" value="" placeholder="Say hi!" name="message_input" id="message_input" />
-            <button id="message_send">></button>
+            <div id="message_input_container">
+                <input type="text" value="" placeholder="Say hi!" name="message_input" id="message_input" />
+                <button id="message_send">></button>
+            </div>
         </div>
 
         <div id="user_counter">
@@ -88,6 +93,7 @@
             chat_entry_element.append(chat_messages_element, chat_times_element);
             document.getElementById("chat_message_history").append(chat_entry_element);
             message_input_element.value = "";
+            chat_entry_element.scrollIntoView({ behavior: "smooth", block: "end" });
         };
 
         document.getElementById("message_send").addEventListener("click", () => {
@@ -99,6 +105,7 @@
             if (document.getElementById("chat_container").className == 'chat_hidden') {
                 document.getElementById("chat_container").className = 'chat_show';
                 document.getElementById("open_close_chat").textContent = "V";
+                chat_entry_element.scrollIntoView({ behavior: "smooth", block: "end" });
             } else {
                 document.getElementById("chat_container").className = 'chat_hidden';
                 document.getElementById("open_close_chat").textContent = "^";
