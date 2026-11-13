@@ -27,10 +27,10 @@
                 enableChat: true
             }
         });
+        const { people } = playhtml;
 
         // Generate Random User Name + Cursor Color
         playhtml.ready.then(() => {
-            const { people } = playhtml;
             people.me.name = GenerateName();
             document.getElementById("user_name").innerText = `Name: ${people.me.name}`;
         });
@@ -42,9 +42,13 @@
 
 
 
-        // Send Chat Message
+        // Send Chat Message (click send button)
         document.getElementById("message_send").addEventListener("click", () => {
-            const { people } = playhtml;
+            SendChatMessage(people.me.name);
+        });
+        // Send Chat Message (press enter key)
+        document.getElementById("message_input").addEventListener("keydown", (e) => {
+            if (e.keyCode !== 13) return;
             SendChatMessage(people.me.name);
         });
 
@@ -55,10 +59,9 @@
 
         // Shuffle User Name Button
         document.getElementById("shuffle_user_name").addEventListener("click", () => {
-            const { people } = playhtml;
             people.me.name = GenerateName();
             document.getElementById("user_name").innerText = `Name: ${people.me.name}`;
-        })
+        });
 
 
 

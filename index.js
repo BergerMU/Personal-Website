@@ -46,7 +46,7 @@ function SendChatMessage(user_name) {
     chat_messages_element.append(message);
 
     const time = document.createElement("p");
-    time.textContent = `${user_name}: ${new Date().toLocaleTimeString()}`;
+    time.textContent = `${user_name} | ${new Date().toLocaleTimeString()}`;
     chat_times_element.append(time);
 
     // Add Parent Chat Entry Element To Page + Clear Input
