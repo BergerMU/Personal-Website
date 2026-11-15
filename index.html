@@ -111,6 +111,19 @@
                         const img = document.createElement("img");
                         img.src = doodle.src;
                         img.alt = "";
+
+                        // Delete img code
+                        img.style.cursor = "pointer";
+                        img.addEventListener("click", () => {
+                            if (!confirm("Delete this doodle?")) return;
+                            strip.setData((currentData) => {
+                                const index = currentData.doodles.findIndex(
+                                    (entry) => entry.id === doodle.id
+                                );
+                                if (index !== -1) currentData.doodles.splice(index, 1);
+                            });
+                        });
+
                         return img;
                     }),
                 );
