@@ -159,6 +159,7 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    width: 100%
 }
 
 .pad {
@@ -173,11 +174,12 @@
 }
 
 .strip {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+    grid-template-rows: auto;
+
+    width: 100%;
     gap: 6px;
-    max-width: 100%;
-    min-height: 64px;
-    overflow-x: auto;
 }
 
 .strip img {
@@ -187,6 +189,7 @@
     border: 1px solid #1c1c1c;
     background: white;
     image-rendering: pixelated;
+    justify-self: center;
 }
 
 /* Big Sections */
@@ -672,6 +675,10 @@ iframe {
 
     #models-section {
         flex-direction: column;
+
+        h3 {
+            font-size: 9vw;
+        }
     }
 
     iframe {

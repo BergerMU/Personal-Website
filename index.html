@@ -68,6 +68,7 @@
         // Drawing Pad Logic
         const SIZE = 64;
         const MAX_DOODLES = 20;
+        const DOODLE_DELETE_PASSWORD = "mydadis72andbald";
         const pad = document.getElementById("doodle-pad");
         const pen = pad.getContext("2d");
         pen.lineWidth = 4;
@@ -115,6 +116,14 @@
                         // Delete img code
                         img.style.cursor = "pointer";
                         img.addEventListener("click", () => {
+                            if (!DOODLE_DELETE_PASSWORD) {
+                                return;
+                            }
+                            const enteredPassword = prompt("Enter the password to delete this doodle:");
+                            if (enteredPassword !== DOODLE_DELETE_PASSWORD) {
+                                if (enteredPassword !== null) alert("Incorrect password.");
+                                return;
+                            }
                             if (!confirm("Delete this doodle?")) return;
                             strip.setData((currentData) => {
                                 const index = currentData.doodles.findIndex(
@@ -134,10 +143,6 @@
             const src = pad.toDataURL("image/png");
             strip.setData((data) => {
                 data.doodles.push({ id: crypto.randomUUID(), src });
-                // Keep the newest 20. Shared arrays support splice, not shift.
-                if (data.doodles.length > MAX_DOODLES) {
-                    data.doodles.splice(0, data.doodles.length - MAX_DOODLES);
-                }
             });
             clearPad();
         });
